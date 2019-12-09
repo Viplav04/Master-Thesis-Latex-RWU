@@ -16,7 +16,7 @@ Furthermore, expected styles differ between professors.
 
 
 
-Use commands in script.sh file to generate bibliography and abbreviations files.
+Use commands in ```script.sh``` file to generate bibliography and abbreviations files.
 
 Otherwise just run 
 ```make```
