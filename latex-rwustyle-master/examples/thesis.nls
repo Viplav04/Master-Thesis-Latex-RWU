@@ -1,0 +1,10 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{ROS}]\begingroup Robot Operating System\nomeqref {0.0}
+		\nompageref{3}
+  \item [{RTOS}]\begingroup Real-Time Operating System\nomeqref {0.0}
+		\nompageref{3}
+
+\end{thenomenclature}

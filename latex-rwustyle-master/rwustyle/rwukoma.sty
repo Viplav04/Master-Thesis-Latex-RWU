@@ -1,0 +1,187 @@
+\NeedsTeXFormat{LaTeX2e}[2017/01/01]
+\ProvidesPackage{rwukoma}[2019/11/26 RWU style KOMA script support]
+
+\RequirePackage{kvoptions}
+\RequirePackage{ifthen}
+\RequirePackage{rwudefs}
+\RequirePackage{tocbasic}
+\RequirePackage{scrlayer-scrpage}
+\RequirePackage{lastpage}
+
+\SetupKeyvalOptions{
+	family=rwukoma,
+	prefix=rwukoma@
+}
+
+\DeclareStringOption[barlowsc]{fontsetup}
+\DeclareStringOption[auto]{head}
+\DeclareStringOption[auto]{foot}
+\DeclareBoolOption{colorhead}
+
+\ProcessKeyvalOptions*
+
+\ifdefined\KOMAClassName
+	\ifthenelse{
+		\equal{\KOMAClassName}{scrartcl} \OR
+		\equal{\KOMAClassName}{scrreprt} \OR
+		\equal{\KOMAClassName}{scrbook}
+	}{
+		\PackageInfo{rwukoma}{Setting up for KOMA script class \KOMAClassName}%
+	}{
+		\PackageError{rwukoma}{Unsupported document class}
+			{Only scrartcl, scrreprt and scrbook are supported}%
+	}
+\else
+	\PackageError{rwukoma}{This package only works with KOMA script document classes}
+		{Use scrartcl, scrreprt or scrbook}%
+\fi
+
+\PassOptionsToPackage{fontsetup=\rwukoma@fontsetup}{rwufont}
+\RequirePackage{rwufont}
+
+\KOMAoption{parskip}{true}
+
+\addtokomafont{author}{\usekomafont{disposition}\mdseries}
+\addtokomafont{date}{\usekomafont{disposition}\mdseries}
+\addtokomafont{dedication}{\usekomafont{disposition}\mdseries}
+\addtokomafont{publishers}{\usekomafont{disposition}\mdseries}
+\addtokomafont{subject}{\usekomafont{disposition}\mdseries}
+\addtokomafont{subtitle}{\color{rwucyan}}
+\addtokomafont{title}{\color{rwuviolet}}
+\addtokomafont{titlehead}{\usekomafont{disposition}\mdseries}
+
+\setkomafont{pageheadfoot}{\usekomafont{disposition}\mdseries\upshape\footnotesize\color{gray}}
+\setkomafont{pagenumber}{\usekomafont{disposition}\mdseries\upshape\footnotesize\color{gray}}
+
+\newcommand{\rwukoma@usedisposition}[1]{%
+	\begingroup%
+		\usekomafont{disposition}\mdseries #1%
+	\endgroup%
+}
+
+\DeclareTOCStyleEntry[numwidth=6mm]{default}{part}
+\ifthenelse{\equal{\KOMAClassName}{scrartcl}}{%
+		\DeclareTOCStyleEntry[
+			numwidth=6mm,
+			entryformat=\rwukoma@usedisposition,
+			pagenumberformat=\rwukoma@usedisposition
+		]{default}{section}%
+		\DeclareTOCStyleEntry[
+			indent=6mm,
+			numwidth=9mm,
+			entryformat=\rwukoma@usedisposition,
+			pagenumberformat=\rwukoma@usedisposition
+		]{default}{subsection}%
+		\DeclareTOCStyleEntry[
+			indent=15mm,
+			numwidth=11.5mm,
+			entryformat=\rwukoma@usedisposition,
+			pagenumberformat=\rwukoma@usedisposition
+		]{default}{subsubsection}%
+	}{%
+		\DeclareTOCStyleEntry[
+			numwidth=6mm
+		]{default}{chapter}%
+		\DeclareTOCStyleEntry[
+			indent=6mm,
+			numwidth=8mm,
+			entryformat=\rwukoma@usedisposition,
+			pagenumberformat=\rwukoma@usedisposition
+		]{default}{section}%
+		\DeclareTOCStyleEntry[
+			indent=14mm,
+			numwidth=10mm,
+			entryformat=\rwukoma@usedisposition,
+			pagenumberformat=\rwukoma@usedisposition
+		]{default}{subsection}%
+		\DeclareTOCStyleEntry[
+			indent=24mm,
+			numwidth=12mm,
+			entryformat=\rwukoma@usedisposition,
+			pagenumberformat=\rwukoma@usedisposition
+		]{default}{subsubsection}%
+	}
+\DeclareTOCStyleEntry[
+	entryformat=\rwukoma@usedisposition,
+	pagenumberformat=\rwukoma@usedisposition
+]{default}{figure}
+\DeclareTOCStyleEntry[
+	entryformat=\rwukoma@usedisposition,
+	pagenumberformat=\rwukoma@usedisposition
+]{default}{table}
+
+\newboolean{rwukoma@dohead}
+\ifthenelse{
+		\equal{\rwukoma@head}{true} \OR \(
+			\equal{\rwukoma@head}{auto} \AND \(
+				\equal{\KOMAClassName}{scrartcl} \OR
+				\equal{\KOMAClassName}{scrlttr2}
+			\)
+		\)
+	}{\setboolean{rwukoma@dohead}{true}}{\setboolean{rwukoma@dohead}{false}}
+
+\newcommand{\rwukoma@setuphead}{
+	\if@twoside%
+		\lohead*{}
+		\cohead*{}
+		\rohead*{\rwulogo}
+		\lehead*{\rwulogo}
+		\cehead*{}
+		\rehead*{}
+	\else%
+		\lohead*{}
+		\cohead*{}
+		\rohead*{\rwulogo}
+	\fi%
+	\setlength{\headheight}{52pt}
+	\pagestyle{scrheadings}
+}
+
+\ifrwukoma@dohead%
+	\rwukoma@setuphead
+\fi
+
+\newboolean{rwukoma@dofoot}
+\ifthenelse{
+		\equal{\rwukoma@foot}{true} \OR \(
+			\equal{\rwukoma@foot}{auto} \AND \(
+				\equal{\KOMAClassName}{scrartcl} \OR
+				\equal{\KOMAClassName}{scrlttr2}
+			\)
+		\)
+	}{\setboolean{rwukoma@dofoot}{true}}{\setboolean{rwukoma@dofoot}{false}}
+
+\newcommand{\rwukoma@setupfoot}{
+	\if@twoside%
+		\lofoot*{}
+		\cofoot*{}
+		\rofoot*{\thepage{}~|~\pageref*{LastPage}}
+		\lefoot*{\thepage{}~|~\pageref*{LastPage}}
+		\cefoot*{}
+		\refoot*{}
+	\else%
+		\lofoot*{\thepage{}~|~\pageref*{LastPage}}
+		\cofoot*{}
+		\rofoot*{}
+	\fi%
+	\pagestyle{scrheadings}
+}
+
+\ifrwukoma@dofoot%
+	\rwukoma@setupfoot
+\fi
+
+\ifrwukoma@colorhead%
+	\addtokomafont{partnumber}{\color{rwuviolet}}
+	\addtokomafont{part}{\color{rwuviolet}}
+	\ifthenelse{\equal{\KOMAClassName}{scrartcl}}{}{\addtokomafont{chapter}{\color{rwuviolet}}}
+	\addtokomafont{section}{\color{rwuviolet}}
+	\addtokomafont{subsection}{\color{rwuviolet}}
+	\addtokomafont{subsubsection}{\color{rwuviolet}}
+\fi
+
+\DeclareSectionCommand[afterskip=1sp]{section}
+\DeclareSectionCommand[afterskip=1sp]{subsection}
+\DeclareSectionCommand[afterskip=1sp]{subsubsection}
+
+\endinput

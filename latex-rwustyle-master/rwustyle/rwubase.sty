@@ -1,0 +1,19 @@
+\NeedsTeXFormat{LaTeX2e}[2017/01/01]
+\ProvidesPackage{rwubase}[2019/11/26 RWU base style package]
+
+\RequirePackage{kvoptions}
+\RequirePackage{rwudefs}
+
+\SetupKeyvalOptions{
+	family=rwubase,
+	prefix=rwubase@
+}
+
+\DeclareStringOption[barlowsc]{fontsetup}
+
+\ProcessKeyvalOptions*
+
+\PassOptionsToPackage{fontsetup=\rwubase@fontsetup}{rwufont}
+\RequirePackage{rwufont}
+
+\endinput

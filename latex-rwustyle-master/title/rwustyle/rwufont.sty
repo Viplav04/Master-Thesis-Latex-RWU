@@ -1,0 +1,58 @@
+\NeedsTeXFormat{LaTeX2e}[2017/01/01]
+\ProvidesPackage{rwufont}[2019/11/26 RWU corporate font package]
+
+\RequirePackage{kvoptions}
+\RequirePackage{ifthen}
+\RequirePackage{fontspec}
+
+\SetupKeyvalOptions{
+	family=rwufont,
+	prefix=rwufont@
+}
+
+\DeclareStringOption[barlowsc]{fontsetup}
+
+\ProcessKeyvalOptions*
+
+\setsansfont[Ligatures=TeX]{Barlow Semi Condensed}
+
+\ifthenelse{\equal{\rwufont@fontsetup}{barlowsc}}{
+	\setmainfont[Ligatures=TeX]{Barlow Semi Condensed}
+}{
+	\ifthenelse{\equal{\rwufont@fontsetup}{barlow}}{
+		\setmainfont[Ligatures=TeX]{Barlow}
+	}{
+		\ifthenelse{\equal{\rwufont@fontsetup}{basic}}{
+			% do not set up main font
+		}{
+			\PackageError{rwufont}{Invalid fontsetup option}{%
+				Please use one of the following:\MessageBreak%
+				\space\space fontsetup=barlowsc\MessageBreak%
+				\space\space fontsetup=barlow\MessageBreak%
+				\space\space fontsetup=basic\MessageBreak%
+			}
+		}
+	}
+}
+
+
+\providecommand*{\glqq}{\mbox{\char"201E}}
+\renewcommand*{\glqq}{\mbox{\char"201E}}
+\providecommand*{\grqq}{\mbox{\char"201C}}
+\renewcommand*{\grqq}{\mbox{\char"201C}}
+% FIXME: Disabled for now, as the font glyph for the opening single
+% quotation mark has unwanted extra space after it (font bug)!
+%\providecommand*{\glq}{\mbox{\char"201A}}
+%\renewcommand*{\glq}{\mbox{\char"201A}}
+%\providecommand*{\grq}{\mbox{\char"2018}}
+%\renewcommand*{\grq}{\mbox{\char"2018}}
+\providecommand*{\flqq}{\mbox{\char"00BB}}
+\renewcommand*{\flqq}{\mbox{\char"00BB}}
+\providecommand*{\frqq}{\mbox{\char"00AB}}
+\renewcommand*{\frqq}{\mbox{\char"00AB}}
+\providecommand*{\flq}{\mbox{\char"203A}}
+\renewcommand*{\flq}{\mbox{\char"203A}}
+\providecommand*{\frq}{\mbox{\char"2039}}
+\renewcommand*{\frq}{\mbox{\char"2039}}
+
+\endinput

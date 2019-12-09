@@ -1,0 +1,5 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Erster Abschnitt}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Erster Unterabschnitt}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Zweiter Unterabschnitt}{2}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Unterunterabschnitt}{3}{subsubsection.1.2.1}

@@ -1,0 +1,21 @@
+\documentclass{scrartcl}
+\usepackage[english,ngerman]{babel}
+\usepackage{rwukoma}
+\usepackage[autostyle,german=guillemets]{csquotes}
+\usepackage[pdfusetitle]{hyperref}
+
+\title{Testdokument mit csquotes}
+\author{Stefan Gast}
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+	\section{Deutschsprachiger Abschnitt}
+		\enquote{\enquote{Hallo Welt!} ist ein gängiger Gruß unter Programmierern}, scherzte er.
+
+	\section{Englischsprachiger Abschnitt}
+		\begin{otherlanguage}{english}
+			\enquote{Yeah, it works! Great!}, he saw to his amazement.
+		\end{otherlanguage}
+\end{document}

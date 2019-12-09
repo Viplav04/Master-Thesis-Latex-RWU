@@ -1,0 +1,16 @@
+\NeedsTeXFormat{LaTeX2e}[2017/01/01]
+\ProvidesPackage{rwudefs}[2019/11/26 RWU logo and color definitions]
+\ProvidesFile{rwulogo.eps}[2019/11/26 RWU logo as Encapsulated PostScipt file]
+
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+
+\definecolor{rwuviolet}{RGB}{102, 56, 182}
+\definecolor{rwuvioletlight}{RGB}{155, 125, 212}
+\definecolor{rwucyan}{RGB}{0, 169, 206}
+\definecolor{rwucyanlight}{RGB}{5, 195, 222}
+\definecolor{rwucyan40}{RGB}{153, 221, 253}
+
+\newcommand{\rwulogo}[1][width=5.12cm]{\includegraphics[#1]{rwulogo.eps}}
+
+\endinput

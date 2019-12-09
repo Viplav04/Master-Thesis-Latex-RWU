@@ -1,0 +1,8 @@
+\babel@toc {ngerman}{}
+\contentsline {chapter}{\numberline {1}Erstes Kapitel}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Erster Abschnitt}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Erster Unterabschnitt}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{\nonumberline Erster Unterunterabschnitt}{4}{section*.2}
+\contentsline {subsubsection}{\nonumberline Zweiter Unterabschnitt}{4}{section*.3}
+\contentsline {chapter}{\numberline {2}Zweites Kapitel}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Noch ein Abschnitt}{6}{section.2.1}

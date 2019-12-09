@@ -1,0 +1,80 @@
+\documentclass{scrbook}
+\usepackage[ngerman]{babel}
+\usepackage[colorhead=true]{rwukoma}
+\usepackage[pdfusetitle]{hyperref}
+\usepackage{lipsum,caption}
+
+\KOMAoption{listof}{totoc}
+
+\title{Beispiel für ein \LaTeX-Buch}
+\subtitle{Kann man auch machen}
+\author{Stefan Gast}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\part{Grundlagen}
+
+	\chapter{Erstes Kapitel}
+
+		Mit der \LaTeX-Klasse \verb?scrbook? lassen sich ganze Bücher
+		verfassen.
+
+		\section{Erster Abschnitt}
+
+			Testweise ist in Abbildung~\ref{fig:logo} das RWU-Logo
+			zu sehen. Abbildung~\ref{fig:latex} zeigt das \LaTeX-Logo
+			in groß.
+
+			\begin{figure}
+				\centering
+				\rwulogo[width=0.5\columnwidth]
+				\caption{Das RWU-Logo}
+				\label{fig:logo}
+			\end{figure}
+
+			\begin{figure}
+				\centering
+				\Huge{\LaTeX}
+				\caption{Das \LaTeX-Logo}
+				\label{fig:latex}
+			\end{figure}
+
+			\lipsum[1]
+
+			\subsection{Erster Unterabschnitt}
+
+				\lipsum[2]
+
+				\subsubsection{Erster Unterunterabschnitt}
+
+					\lipsum[2-5]
+
+				\subsubsection{Zweiter Unterabschnitt}
+
+					\lipsum[6-12]
+
+	\chapter{Zweites Kapitel}
+
+		Hier gibt es nichts mehr zu sehen.
+
+		\section{Noch ein Abschnitt}
+
+			\lipsum
+
+	\part{Eigentlicher Inhalt}
+
+	\chapter{Nächstes Kapitel}
+
+		Ja, so viel Inhalt haben wir gar nicht.
+
+		\section{Weiterer Abschnitt}
+
+			\lipsum
+
+	\appendix
+	\part{Abbildungs- und Tabellenverzeichnisse}
+	\listoffigures
+\end{document}
