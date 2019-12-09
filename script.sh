@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-
+cd ~/latex-rwustyle-master
 cd examples
 
 rm thesis.nlo thesis.ist thesis.ilg thesis.blg thesis.bbl
