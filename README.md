@@ -1,6 +1,7 @@
 # Master-Thesis-Latex-RWU
-Master Thesis Latex format with new Styling for Hochschule Ravensburg - Weingarten for Linux users.
+Master Thesis Latex format with new styling for Hochschule Ravensburg - Weingarten for Linux users.
 
+Please open the folder latex-rwu-style-master, read the readme file and install the font. Instructions are given there.
 These files have been modified for a thesis report. The original files for this styling have been created by Mr. Stefan Gast.
 This project contains RWU LaTeX style packages, using the Barlow font family
 and the RWU colors.
@@ -16,7 +17,7 @@ Furthermore, expected styles differ between professors.
 
 
 
-Use commands in ```script.sh``` file to generate bibliography and abbreviations files.
+Use commands in ```script.sh``` file to generate bibliography and abbreviations/nomenclature files.
 
 Otherwise just run 
 ```make```
