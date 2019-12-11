@@ -3,15 +3,15 @@ xelatex,
 	oneside,		% Single side print
 	12pt,			% Font size
 	parskip=half,	% Half line skip between paragraphs
-	headsepline,	% Line after header
-	footsepline,	% Line before footer
+%	headsepline,	% Line after header
+%	footsepline,	% Line before footer
 	abstracton,
 	chapterprefix=true% like in standard class "report"
     appendixprefix=true]
-{scrreprt}
+{scrbook}
 \usepackage[english]{babel}
 
-\usepackage{rwufont}
+\usepackage{rwukoma}
 \usepackage[pdfusetitle]{hyperref}
 \title{Master Thesis}
 \author{Viplav Setia}
@@ -20,10 +20,18 @@ xelatex,
 \makenomenclature
 \renewcommand{\nomname}{List of abbreviations, formulas and indexes}
 \usepackage{blindtext}
-\begin{document}
-	
 
-	
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\rofoot{\pagemark}
+\refoot{\pagemark}
+\automark{chapter}
+\ohead{\headmark}
+
+
+\begin{document}
+
 \section*{\Large\normalfont\bfseries Declaration}
 	\addcontentsline{toc}{chapter}{Declaration}
 
@@ -54,18 +62,26 @@ Also, many thanks to my family and friends for their constant encouragement.
 		\section*{\Large\normalfont\bfseries Abstract}
 		\addcontentsline{toc}{chapter}{Abstract}
 
-The automotive industry is changing rapidly to new technologies like electromobility and autonomous driving. All major companies like Daimler, BMW, Tesla, Bosch, etc. are investing heavily to bring electric cars to the market and develop prototypes for autonomous driving. To support this change, middleware is required which is used as a means of data exchange between various sensors, control systems and actuators. The focus of this thesis is to test the new versions of the middleware Robot Operating System(ROS\nomenclature{ROS}{Robot Operating System}) which offer support for embedded and real time systems. To test the version micro-ROS, a demonstrator was built using a STM32 microcontroller with a Nuttx Real-Time Operating System(RTOS\nomenclature{RTOS}{Real-Time Operating System}) installed to show the data transfer of a pressure sensor. To test the real-time performance for this version, an algorithm was created to test the delay in data transfer with different data sizes. To test the real-time performance of ROS2, an inverted pendulum demo was used and its simulation was visualised on a Linux system enabled with real-time capabilities. Finally, a model using the Gazebo robot simulator was developed to explore ADAS applications using a camera and a LIDAR sensor as an example to show the data transfer using ROS2 for the automotive industry.
+The automotive industry is changing rapidly to new technologies like electromobility and automated driving. All major companies like Daimler, BMW, Tesla, Bosch, etc. are investing heavily to bring electric cars to the market and develop prototypes for autonomous driving. To support this change, middleware is required which is used as a means of data exchange between various sensors, control systems and actuators. The focus of this thesis is to test the new versions of the middleware Robot Operating System(ROS\nomenclature{ROS}{Robot Operating System}) which offer support for embedded and real time systems. To test the version micro-ROS, a demonstrator was built using a STM32 microcontroller with a Nuttx Real-Time Operating System(RTOS\nomenclature{RTOS}{Real-Time Operating System}) installed to show the data transfer of a pressure sensor. To test the real-time performance for this version, an algorithm was created to test the delay in data transfer with different data sizes. To test the real-time performance of ROS2, an inverted pendulum demo was used and its simulation was visualised on a Linux system enabled with real-time capabilities. Finally, a model using the Gazebo robot simulator was developed to explore ADAS applications using a camera and a LIDAR sensor as an example to show the data transfer using ROS2 for the automotive industry.
 \clearpage
 
 	\addcontentsline{toc}{chapter}{List of abbreviations, formulas and indexes}
 	
-	
-
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
 \printnomenclature
 	
 
 	\tableofcontents
+	
+	
+
+
 	\chapter{Introduction}
+
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
+
   Dummy Text 
 \begin{figure}[ht]
 \begin{center}
@@ -79,14 +95,18 @@ The automotive industry is changing rapidly to new technologies like electromobi
 			Why?
 	 \section{Objectives}
 	 Tasks
+	 
 	 \section{Robot Operating System(ROS)}
 	 ROS
 	 History
 	 ROS2
 	 micro-ROS
-	 
+	
 	 
 	\chapter{Literature Research}	
+		
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
 	
 	\section{ROS2 Concepts}
 	Node
@@ -97,7 +117,7 @@ The automotive industry is changing rapidly to new technologies like electromobi
 	Discovery
 
 	\section{ROS1 vs ROS2}	
-	
+
 	\section{Embedded Systems}
 	STM32 Micro-controller
 	Features
@@ -112,13 +132,22 @@ The automotive industry is changing rapidly to new technologies like electromobi
 		Hard
 		
 	\section{Previous Research Results}
-	
+
+	\chapter{ADAS Applications using ROS2}
 		
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
+		\section{Lane Detection using Camera}
+		\section{Auto Stop using LIDAR}
+		\section{Driver Control using Keyboard}	
 	
 	
 	
 	\chapter{Test Setup}
-	
+		
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
+
 	\section{Testing micro-ROS}
 
 	\subsection{Components}
@@ -130,16 +159,19 @@ The automotive industry is changing rapidly to new technologies like electromobi
 
 
 		\chapter{Results}
+			
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
 		\section{Latency Analysis in micro-ROS}
 		\section{Latency Analysis in ROS2}
+
 		
-		\chapter{ADAS Applications using ROS2}
-		\section{Lane Detection using Camera}
-		\section{Auto Stop using LIDAR}
-		\section{Driver Control using Keyboard}
 		
 		
 		\chapter{Conclusion and Future Scope}
+			
+\rofoot[\pagemark]{\pagemark}
+\refoot[\pagemark]{\pagemark}
 		\addcontentsline{toc}{chapter}{List of Figures}
 	\listoffigures
 	\addcontentsline{toc}{chapter}{List of Tables}
