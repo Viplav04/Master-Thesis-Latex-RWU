@@ -1,10 +1,22 @@
 \begin{thebibliography}{1}
 
-\bibitem{dumm}
-Brian Krzanich.
-\newblock Data is the new oil in the future of automated driving.
-\newblock
+\bibitem{datastats}
+B.~Krzanich, ``Data is the new oil in the future of automated driving.''
   \url{https://newsroom.intel.com/editorials/krzanich-the-future-of-automated-driving/#gs.kvj5y2/},
   2016.
+
+\bibitem{ROS}
+O.~Robotics, ``About ros.'' \url{https://www.ros.org/about-ros/}, 27.12.2019.
+
+\bibitem{ROS2distro}
+O.~Robotics, ``Distributions.''
+  \url{https://index.ros.org/doc/ros2/Releases/#releases}.
+
+\bibitem{uros}
+micro ROS, ``Overview.'' \url{https://micro-ros.github.io/docs/overview/},
+  27.12.2019.
+
+\bibitem{uroslogo}
+micro ROS, ``micro-ros.'' \url{https://micro-ros.github.io/}, 27.12.2019.
 
 \end{thebibliography}

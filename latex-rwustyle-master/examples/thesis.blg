@@ -1,46 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: examples/thesis.aux
-The style file: plain.bst
+The style file: ieeetr.bst
 Database file #1: thesis.bib
-You've used 1 entry,
-            2118 wiz_defined-function locations,
-            502 strings with 4181 characters,
-and the built_in function-call counts, 228 in all, are:
-= -- 20
-> -- 7
+You've used 5 entries,
+            1876 wiz_defined-function locations,
+            498 strings with 3936 characters,
+and the built_in function-call counts, 643 in all, are:
+= -- 54
+> -- 20
 < -- 0
-+ -- 3
-- -- 2
-* -- 8
-:= -- 44
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 4
++ -- 10
+- -- 5
+* -- 26
+:= -- 100
+add.period$ -- 5
+call.type$ -- 5
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 7
-empty$ -- 23
-format.name$ -- 2
-if$ -- 47
+cite$ -- 5
+duplicate$ -- 20
+empty$ -- 91
+format.name$ -- 5
+if$ -- 160
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 5
 missing$ -- 0
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 8
+newline$ -- 18
+num.names$ -- 5
+pop$ -- 29
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 0
 quote$ -- 0
-skip$ -- 7
+skip$ -- 22
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 0
+swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 0
 warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 12
+while$ -- 5
+width$ -- 6
+write$ -- 41

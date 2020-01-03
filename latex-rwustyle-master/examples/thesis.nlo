@@ -1,2 +1,7 @@
 \nomenclatureentry{aROS@[{ROS}]\begingroup Robot Operating System\nomeqref {\relax 0.0}|nompageref}{3}
 \nomenclatureentry{aRTOS@[{RTOS}]\begingroup Real-Time Operating System\nomeqref {\relax 0.0}|nompageref}{3}
+\nomenclatureentry{aCPU@[{CPU}]\begingroup Central Processing Unit\nomeqref {\relax 1.0}|nompageref}{8}
+\nomenclatureentry{aDDS@[{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}|nompageref}{8}
+\nomenclatureentry{aDDS-XRCE@[{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}|nompageref}{9}
+\nomenclatureentry{aOFERA@[{OFERA}]\begingroup Open Framework for Embedded Robot Applications\nomeqref {\relax 1.0}|nompageref}{9}
+\nomenclatureentry{aQoS@[{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}|nompageref}{11}
