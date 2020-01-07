@@ -18,7 +18,7 @@ cp thesis.nls examples
 bibtex examples/thesis
 cp thesis.bib examples
 
-echo "moved"
+echo "moved, change something in thesis.tex, save and run make again"
 
-make
+
 
