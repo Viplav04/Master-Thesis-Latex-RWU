@@ -2,17 +2,41 @@
 
  \nomgroup{A}
 
+  \item [{ADAS}]\begingroup Advanced Driver Assistance Systems\nomeqref {\relax 0.0}
+		\nompageref{3}
+  \item [{ANSI}]\begingroup American National Standards Institute\nomeqref {\relax 2.0}
+		\nompageref{14}
   \item [{CPU}]\begingroup Central Processing Unit\nomeqref {\relax 1.0}
 		\nompageref{8}
   \item [{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}
 		\nompageref{8}
   \item [{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}
 		\nompageref{9}
+  \item [{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}
+		\nompageref{15}
+  \item [{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}
+		\nompageref{15}
+  \item [{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}
+		\nompageref{14}
+  \item [{LIDAR}]\begingroup Light Detection and Ranging\nomeqref {\relax 0.0}
+		\nompageref{3}
+  \item [{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}
+		\nompageref{15}
   \item [{OFERA}]\begingroup Open Framework for Embedded Robot Applications\nomeqref {\relax 1.0}
 		\nompageref{9}
+  \item [{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}
+		\nompageref{14}
+  \item [{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}
+		\nompageref{12}
   \item [{ROS}]\begingroup Robot Operating System\nomeqref {\relax 0.0}
 		\nompageref{3}
   \item [{RTOS}]\begingroup Real-Time Operating System\nomeqref {\relax 0.0}
 		\nompageref{3}
+  \item [{UART}]\begingroup Universal Asynchronous Receiver-Transmitter\nomeqref {\relax 2.0}
+		\nompageref{15}
+  \item [{UDP}]\begingroup User Datagram Protocol\nomeqref {\relax 2.0}
+		\nompageref{15}
+  \item [{USB}]\begingroup Universal Serial Bus\nomeqref {\relax 2.0}
+		\nompageref{14}
 
 \end{thenomenclature}

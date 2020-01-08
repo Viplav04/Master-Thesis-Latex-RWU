@@ -1,7 +1,18 @@
 \nomenclatureentry{aROS@[{ROS}]\begingroup Robot Operating System\nomeqref {\relax 0.0}|nompageref}{3}
+\nomenclatureentry{aADAS@[{ADAS}]\begingroup Advanced Driver Assistance Systems\nomeqref {\relax 0.0}|nompageref}{3}
+\nomenclatureentry{aLIDAR@[{LIDAR}]\begingroup Light Detection and Ranging\nomeqref {\relax 0.0}|nompageref}{3}
 \nomenclatureentry{aRTOS@[{RTOS}]\begingroup Real-Time Operating System\nomeqref {\relax 0.0}|nompageref}{3}
 \nomenclatureentry{aCPU@[{CPU}]\begingroup Central Processing Unit\nomeqref {\relax 1.0}|nompageref}{8}
 \nomenclatureentry{aDDS@[{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}|nompageref}{8}
 \nomenclatureentry{aDDS-XRCE@[{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}|nompageref}{9}
 \nomenclatureentry{aOFERA@[{OFERA}]\begingroup Open Framework for Embedded Robot Applications\nomeqref {\relax 1.0}|nompageref}{9}
-\nomenclatureentry{aQoS@[{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}|nompageref}{11}
+\nomenclatureentry{aQoS@[{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}|nompageref}{12}
+\nomenclatureentry{aPOSIX@[{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}|nompageref}{14}
+\nomenclatureentry{aANSI@[{ANSI}]\begingroup American National Standards Institute\nomeqref {\relax 2.0}|nompageref}{14}
+\nomenclatureentry{aUSB@[{USB}]\begingroup Universal Serial Bus\nomeqref {\relax 2.0}|nompageref}{14}
+\nomenclatureentry{aLET@[{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}|nompageref}{14}
+\nomenclatureentry{aMCU@[{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}|nompageref}{15}
+\nomenclatureentry{aIP@[{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}|nompageref}{15}
+\nomenclatureentry{aUDP@[{UDP}]\begingroup User Datagram Protocol\nomeqref {\relax 2.0}|nompageref}{15}
+\nomenclatureentry{aUART@[{UART}]\begingroup Universal Asynchronous Receiver-Transmitter\nomeqref {\relax 2.0}|nompageref}{15}
+\nomenclatureentry{aI2C@[{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}|nompageref}{15}

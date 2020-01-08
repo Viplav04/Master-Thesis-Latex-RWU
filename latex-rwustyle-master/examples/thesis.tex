@@ -28,6 +28,8 @@ xelatex,
 \refoot{\pagemark}
 \automark{chapter}
 \ohead{\headmark}
+\setlength{\nomlabelwidth}{2cm}
+\setlength{\nomitemsep}{-\parsep}
 
 
 \begin{document}
@@ -35,7 +37,7 @@ xelatex,
 \section*{\Large\normalfont\bfseries Declaration}
 	\addcontentsline{toc}{chapter}{Declaration}
 
-I, Viplav Setia, born on 04.04.1995 in New Delhi, India, assure that I have done this work independently.All sources and references used for the completion of this
+I, Viplav Setia, born on 04.04.1995 in New Delhi, India, assure that I have done this work independently. All sources and references used for the completion of this
 thesis have been listed and cited accordingly. This thesis work was done in
 partial fulfillment of the requirements for the award of the degree of Master of
 Science in Mechatronics at Hochschule Ravensburg Weingarten and has not been
@@ -62,7 +64,7 @@ Also, many thanks to my family and friends for their constant encouragement.
 		\section*{\Large\normalfont\bfseries Abstract}
 		\addcontentsline{toc}{chapter}{Abstract}
 
-The automotive industry is changing rapidly to new technologies like electromobility and automated driving. All major companies like Daimler, BMW, Tesla, Bosch, etc. are investing heavily to bring electric cars to the market and develop prototypes for automated driving. To support this change, middleware is required which is used as a means of data exchange between various sensors, control systems and actuators. The focus of this thesis is to test the new versions of the middleware Robot Operating System(ROS\nomenclature{ROS}{Robot Operating System}) which offers support for embedded and real-time systems. Additionally, a model using the Gazebo robot simulator was developed to explore ADAS applications using a camera and a LIDAR sensor as an example to show the data transfer using ROS2 for the automotive industry. To test the real-time performance of ROS2, an inverted pendulum demo was used and its simulation was visualized on a Linux system enabled with real-time capabilities. To test the version micro-ROS, a demonstrator was built using a STM32 microcontroller with a Nuttx Real-Time Operating System(RTOS\nomenclature{RTOS}{Real-Time Operating System}) installed to show the data transfer of a pressure sensor. To test the real-time performance for this version, an algorithm was created to test the delay in data transfer with different data sizes. Finally, the results were analyzed and discussed which also helps in suggesting future research scope.
+The automotive industry is changing rapidly to new technologies like electromobility and automated driving. All major companies like Daimler, BMW, Tesla, Bosch, etc. are investing heavily to bring electric cars to the market and develop prototypes for automated driving. To support this change, middleware is required which is used as a means of data exchange between various sensors, control systems and actuators. The focus of this thesis is to test the new versions of the middleware, Robot Operating System(ROS\nomenclature{ROS}{Robot Operating System}), which offers support for embedded and real-time systems. Additionally, a model using the Gazebo robot simulator was developed to explore \nomenclature{ADAS}{Advanced Driver Assistance Systems} Advanced Driver Assistance Systems(ADAS) applications using a camera and a Light Detection and Ranging(LIDAR)\nomenclature{LIDAR}{Light Detection and Ranging} sensor as an example to show the data transfer using ROS 2 for the automotive industry. To test the real-time performance of ROS2, an inverted pendulum demo was used and its simulation was visualized on a Linux system enabled with real-time capabilities. To test the version micro-ROS, a demonstrator was built using a STM32 microcontroller with a Nuttx Real-Time Operating System(RTOS\nomenclature{RTOS}{Real-Time Operating System}) installed to show the data transfer of a pressure sensor. To test the real-time performance for this version, an algorithm was created to test the delay in data transfer with different data sizes. Finally, the results were analyzed and discussed which also helps in suggesting future research scope.
 \clearpage
 
 	\addcontentsline{toc}{chapter}{List of abbreviations, formulas and indexes}
@@ -83,21 +85,21 @@ The automotive industry is changing rapidly to new technologies like electromobi
 \refoot[\pagemark]{\pagemark}
 
 A modern car is a complex assembly of all kinds of sensors, control systems, actuators, drives and other mechanical components. A great amount of data is flowing between different components of a car which needs to be managed and also arrive at the right place at the right time. As shown in the figure below, Intel suggests about 4000 GB of data flow per day will take place in the future.
-\begin{figure}[ht]
+
 \begin{center}
 \includegraphics[scale=.5]{fig/autonomous-vehicle-data-intel-100697604-large.jpg}
-\caption[Data Stats in Autonomous Cars]{Data Stats in Autonomous Cars\cite{datastats}}
+\captionof{figure}[Data Stats in Autonomous Cars]{Data Stats in Autonomous Cars\cite{datastats}}
 \label{fig:datastats}
 \end{center}
-\end{figure}  
+
   
      \section{Motivation}	
 For automotive applications, one major challenge is that all systems in the car should be real-time safe, that is, all systems of the car must give a guaranteed response within a specified time constraint. Missing a deadline can have disastrous consequences, such as, failure to apply the brakes at the right time after recognizing a person in front of the car may result in loss of life. 
-One such software for communication data management is Robot Operating System(ROS). New versions of ROS, namely, ROS2 and micro-ROS offer support for real-time systems and embedded boards. The goal of this thesis is to test the real-time capability and robustness of ROS2 and micro-ROS under different test conditions.
+One such software for communication data management is Robot Operating System(ROS). New versions of ROS, namely, ROS 2 and micro-ROS offer support for real-time systems and embedded boards. The goal of this thesis is to test the real-time capability and robustness of ROS 2 and micro-ROS under different test conditions.
 	 \section{Objectives}
 \begin{itemize}
   \item Research on state of the art
-  \item Apply ROS2 concepts to explore Automotive Applications
+  \item Apply ROS 2 concepts to explore Automotive ADAS Applications
   \item Set up STM32 microcontroller with RTOS and micro-ROS
   \item Test real-time performance of ROS2 using inverted pendulum demo  
   \item Test real-time performance of micro-ROS
@@ -121,7 +123,7 @@ It also offers support for different operating systems such as Linux, macOS, Mic
 {\bfseries	 ROS 2 Distributions}
 	 
 
-The ROS 2 Distributions are shown below in descending order of release date. Dashing Diademata is the first long term support version offered by the ROS developers. The work in this thesis is based on the version Crystal Clemmys as the Dashing version was released in May, 2019 and enough documentation for real-time testing was not available for it. 
+The ROS 2 Distributions are shown below in descending order of release date. Dashing Diademata is the first long term support version offered by the ROS developers. The work in this thesis is based on the version Crystal Clemmys as the Dashing version was released in May, 2019 and sufficient documentation for real-time testing was not available for it. 
 
  
  
@@ -169,7 +171,7 @@ The core concepts of ROS 2, micro-ROS, embedded and real-time systems are mentio
 An executable/application that runs a program/subprogram that communicate with each other via streaming topics is known as a node.
 It is used to communicate with other nodes using ROS client libraries which allow nodes to be written in different programming languages such as C, C++ and python. A robot may contain many nodes to control movement, analyse data, perform an operation like path planning, etc. 
 
-In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. 
+In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. ROS 2 design introduces node lifecycle, which helps to seperate real-time code path. All memory allocations are done during node initialisation.
 
 
 \vspace*{0.5cm}
@@ -185,53 +187,201 @@ In ROS 2, discovery of nodes is automatic through the underlying middleware. Nod
 	
 	\vspace*{0.5cm}
 	Nodes communicate with each other by publishing messages to topics. A message is a simple data structure, comprising typed fields. Standard primitive types (integer, floating point, boolean, etc.) are supported, as are arrays of primitive types. Messages can include arbitrarily nested structures and arrays (much like C structs). msg files are simple text files for specifying the data structure of a message. These files are stored in the msg subdirectory of a package. Nodes can also exchange a request and response message as part of a ROS service call. These request and response messages are defined in srv files.\cite{messages}
-	\begin{figure}[ht]
+	
 \begin{center}
-\includegraphics[scale=1]{fig/node_topic.jpg}
-\caption[Working of Nodes, Topics and Messages]{Working of Nodes, Topics and Messages\cite{node_topic}}
+\includegraphics[scale=0.7]{fig/node_topic.jpg}
+\captionof{figure}[Working of Nodes, Topics and Messages]{Working of Nodes, Topics and Messages\cite{node_topic}}
 \label{fig:node}
 \end{center}
-\end{figure}  
-\vspace*{0.5cm}
+
+
 
 
 	{\bfseries Data Distribution Service(DDS)}
 	
 	
 	\vspace*{0.5cm}
-	Data Distribution Service(DDS) is a middleware standard to ensure dependable,high performance, inter-operable,real-time data exchanges.Add more
-	\vspace*{0.5cm}
+	Data Distribution Service(DDS) is a middleware standard which provides discovery, serialization and transportation to ensure dependable, high performance, interoperable, real-time data exchanges.
+	In a distributed system, middleware is the software layer that lies between the operating system and applications. It enables the various components of a system to more easily communicate and share data. It simplifies the development of distributed systems by letting software developers focus on the specific purpose of their applications rather than the mechanics of passing information between applications and systems.\cite{DDS}
+		
+\begin{center}
+\includegraphics[scale=0.4]{fig/DDS.jpg}
+\captionof{figure}[Software Layers in a Distributed System]{Software Layers in a Distributed System\cite{DDS}}
+\label{fig:DDS}
+\end{center}
+
+\vspace*{0.2cm}
 	
 	{\bfseries Quality of Service(QoS)\nomenclature{QoS}{Quality of Service}}
 	
 	
 	\vspace*{0.5cm}
+	The data can also be shared with flexible Quality of Service (QoS) specifications including reliability, system health (liveliness), and even security. In a real system, not every other end-point needs every item in your local store. DDS is smart about sending just what it needs. If messages don’t always reach their intended destinations, the middleware implements reliability where needed. When systems change, the middleware dynamically figures out where to send which data, and intelligently informs participants of the changes. If the total data size is huge, DDS intelligently filters and sends only the data each end-point really needs. When updates need to be fast, DDS sends multicast messages to update many remote applications at once. As data formats evolve, DDS keeps track of the versions used by various parts of the system and automatically translates. For security-critical applications, DDS controls access, enforces data flow paths, and encrypts data on-the-fly.\cite{DDS}
 	
+\vspace*{0.2cm}
+	
+The base QoS profile currently includes settings for the following policies:
+\begin{itemize}
 
-\vspace*{0.5cm}
+\item {\bfseries History}
+\begin{itemize}
+\item Keep last: only store up to N samples, configurable via the queue depth option.
 
-	{\bfseries Executor}
-	
-	
-\vspace*{0.5cm}
+\item Keep all: store all samples, subject to the configured resource limits of the underlying middleware.
+\end{itemize}
+\item {\bfseries Depth}
+\begin{itemize}
+\item Size of the queue: only honored if used together with “keep last”.
+\end{itemize}
+\item {\bfseries Reliability}
+\begin{itemize}
+\item Best effort: attempt to deliver samples, but may lose them if the network is not robust.
+
+\item Reliable: guarantee that samples are delivered, may retry multiple times.
+\end{itemize}
+\item {\bfseries Durability}
+\begin{itemize}
+\item Transient local: the publisher becomes responsible for persisting samples for “late-joining” subscribers.
+
+\item Volatile: no attempt is made to persist samples.\cite{qos}
+\end{itemize}
+\end{itemize}
+
+ROS 2, by default, has QoS set to reliable, keep last history and volatile durability. In this thesis, only default QoS settings have been used as ROS 2 Crystal package was installed as a binary package which can be readily used. We can only modify these settings through configuration files of DDS middleware and then installing ROS 2 packages by source. ROS 2 Dashing provides an easier way of changing QoS settings in the source code of the application via Node Options package.
+\clearpage
+
+
 	\section{ROS 1 vs ROS 2}	
-	
-	\section{micro-ROS Architecture}
+	\vspace*{0.5cm}
+			\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{fig/ros1_vs_ros2.jpg}
+\caption[ROS 1 vs ROS 2 Architecture]{ROS 1 vs ROS 2 Architecture\cite{rosvsros2}}
+\label{fig:rosvsros2}
+\end{center}
+\end{figure} 
 
-	\section{Embedded Systems}
-	{\bfseries STM32 Micro-controller}
-	{\bfseries Features}
-	{\bfseries Communications  }
-	{\bfseries IP}
-	{\bfseries Serial}
+\begin{itemize}
+\item {\bfseries Application Layer}
+
+
+\vspace*{0.5cm}
+ROS 2 moves towards a distributed discovery mechanism where nodes advertise information to other nodes. ROS 1 has a centralized discovery mechanism where a master node is required to establish communication between nodes.
+\vspace*{0.5cm}
+\item {\bfseries Middleware Layer}
+
+
+\vspace*{0.5cm}
+ROS 2 uses DDS standard through which discovery, QoS policies, serialization, and transport is provided which also offers real-time support. ROS 2 also requires new versions of client libraries like C++11 and C++14 and Python 3.5 at least. ROS 1 uses a custom transport protocol, centralized discovery, custom serialization format, and uses C++3 and Python 2 versions.
+\vspace*{0.5cm}
+\item {\bfseries OS Layer}
+
+
+\vspace*{0.5cm}
+ROS 2 is supported on Linux, Windows 10, macOS and offers the possibilty to run it on a RTOS, whereas ROS 1 is only supported on Linux.
+\vspace*{0.5cm}
+\end{itemize}
+
+	\section{micro-ROS Architecture}
+		\vspace*{0.5cm}
+\begin{center}
+\includegraphics[scale=0.4]{fig/uros_arc.jpg}
+\captionof{figure}[micro-ROS Architecture]{micro-ROS Architecture\cite{urosarc}}
+\label{fig:urosarc}
+\end{center}
+
+ 
+ 
+ {\bfseries Firmware/Client}
+ 
+ 
+ \vspace*{0.5cm}
+ The firmware or client is the software cross-compiled(compiled on a different system than the target system) on the host - Linux and flashed onto the target - embedded microcontroller. The micro-ROS software uses Nuttx RTOS by default as its operating system. Nuttx can be configured to run different communication protocols and to run micro-ROS applications. Nuttx has a small footprint and is governed by the standards POSIX(Portable Operating System Interface)\nomenclature{POSIX}{Portable Operating System Interface} and ANSI(American National Standards Institute)\nomenclature{ANSI}{American National Standards Institute}. After enabling micro-ROS and related communication settings in the Nuttx configuration, the user can run the micro-ROS nodes on the microcontroller which can be accessed by Linux through Universal Serial Bus(USB)\nomenclature{USB}{Universal Serial Bus}. The firmware communicates with the host through the DDS-XRCE and connects to the agent running on the host.
+ \vspace*{0.5cm}
+ 
+ {\bfseries Agent/Server}
+ 
+ 
+ \vspace*{0.5cm}
+ The agent acts as a server for the clients and communicates with the microcontrollers. It runs on Linux and then can be used to connect with other ROS 2 nodes using the base ROS 2 versions.
+ 
+ 
+  \vspace*{0.5cm}
+  
+  {\bfseries Real-Time Executor}
+  \vspace*{0.5cm}
+  
+  
+Robot applications require deterministic(predictable) execution of callbacks under all conditions and time constraints.
+The Logical Execution Time(LET)\nomenclature{LET}{Logical Execution Time} is a known concept in automotive domain to simplify synchronization in process scheduling. If refers to the concept to schedule multiple ready tasks in such a way, that first all input data is read for all tasks, and then all tasks are executed.\cite{let}
+
+This 2 step approach of the LET Executor guarantees a deterministic execution of callbacks.
+ 
+	\section{Hardware and Communication Protocols Used}
+	
+	\vspace*{0.5cm}
+	{\bfseries STM32 Microcontroller}
+	
+	
+	\vspace*{0.5cm}
+A Microcontroller Unit(MCU)\nomenclature{MCU}{Microcontroller Unit}	is a compact, integrated circuit which includes input/output peripherals, memory and a processor on a single chip. It is designed to govern a specific operation and is commonly found in automobiles, robots, mobile devices, vending machines, etc. In this thesis work, 32-bit MCUs have been used from the STM family of microcontroller boards. Two development boards, Olimex STM32-E407 and Waveshare STM32-Open407I-C, having similar architectures have been used for testing.
+
+\begin{center}
+\includegraphics[scale=0.5]{fig/STM32-E407.jpg}\hspace*{1cm}
+\includegraphics[scale=0.6]{fig/Open407I-C.jpg}
+
+
+\captionof{figure}[STM32 Development Boards]{STM32 Development Boards\cite{olimex}\cite{waveshare}}
+\label{fig:stm32}
+\end{center}
+\vspace*{0.5cm}	
+
+{\bfseries Communication Protocols}
+	
+	
+\vspace*{0.5cm}
+Following are the communication protocols used in testing of micro-ROS:
+\begin{itemize}
+\item {\bfseries Internet Protocol(IP)}\nomenclature{IP}{Internet Protocol} - It is the main communication protocol to transmit datagrams across network boundaries through IP addresses. The MCU is assigned an IP address and a local area network is setup through ethernet wires between the computer and the MCUs to enable the micro-ROS Client Agent connection. User Datagram Protocol(UDP),\nomenclature{UDP}{User Datagram Protocol} part of IP suite, supported by micro-ROS is used in this thesis work.
+\item {\bfseries USB-Serial} - PL2303 peripheral device is used to connect the board’s UART(Universal Asynchronous Receiver-Transmitter)\nomenclature{UART}{Universal Asynchronous Receiver-Transmitter} pins to the USB of the computer to enable communication via USB wire. However, the speed of data transfer is slower than IP because of the PL2303 driver used.
+\item {\bfseries Inter-Integrated Circuit(I2C)}\nomenclature{I2C}{Inter-Integrated Circuit} - is a multi-wire serial bus protocol to allow communication between small chips(slaves) with bigger chips(master). In this thesis work, a demonstrator for micro-ROS using a digital air pressure sensor was built which uses I2C protocol between the sensor and the MCU.
+\end{itemize}
+
 	
 	\section{Real-Time Systems}
-	{\bfseries	Requirement}
-	{\bfseries	Types : Soft}
-	{\bfseries	Firm}
-	{\bfseries	Hard}
-	{\bfseries Pagefaults}	
-	\section{Previous Research Results}
+	
+	
+	\vspace*{0.5cm}	
+Real-time systems should produce reproducable and correct computations at the correct time and be predictable even in a worst case scenario. Failure to respond within a set desired time(deadline) can cause damage to life or other resources. These systems have to be designed according to the dynamics of the physical process. They are often part of an embedded system and are employed in airplane sytems, automotive systems, satellites, power stations, and other critical applications. These systems are usually resource-constrained and still should offer low latencies. Jitter is the variation in the periodic loop time.
+	
+	\begin{center}
+\includegraphics[scale=0.4]{fig/deadline.jpg}
+\captionof{figure}[Deadline and Jitter in Real-Time Systems]{Deadline and Jitter in Real-Time Systems\cite{deadline}}
+\label{fig:deadline}
+\end{center}
+	The different types of real-time systems are:
+	\begin{itemize}
+\item	{\bfseries Soft} - The result can still be used after the deadline. For example, audio/video playback failure will only cause irritation to the user.
+\item	{\bfseries	Firm} - The result does not have utility after the deadline. For example, in an automated manufacturing facility with high production rate, if the part does not arrive in time for a process to take place and the part is skipped or the machines stop, then it can cause financial losses to the facility.
+\item	{\bfseries	Hard} - Missing a deadline can be catastrophic and can cause serious damage to life and property. For example, the landing gear of an airplane fails to deploy in time during landing.
+	\end{itemize}
+	
+	
+	\vspace*{0.5cm}	
+	
+	
+	\section{Research by ROS Community}
+\vspace*{0.5cm}
+\begin{itemize}
+\item {\bfseries Inverted Pendulum demo} - The unstable arrangement of an inverted-pendulum is used as a means to test  the real-time performance of ROS 2. A simulation is performed with ROS 2 where, the pendulum is balanced by a motor and a moving cart at the base. The motor command and sensor feedback are configured as ROS 2 messages and these are updated with a loop time of 1 msec. Linux preemtible kernel is used which offers real-time capability. High scheduling priority is given to the node and memory allocations are done during initialisation of the node. Dynamic memory allocations are blocked as they are not real-time safe. J. Kay and A.R. Tsouroukdissian have implemented this package with ROS 2 Alpha release. They also mention that DDS can be fine tuned for better real-time performance. Their goal was to get less than 3\%(30 microsecs) jitter. Without any stress to the system, the maximum jitter was 3.51\% , minimum was 0.16\%, and mean was 0.46\% but with stress on the processor, the maximum jitter was 25.8\% , minimum was 0.14\%, and mean was 0.38\%. Also, 3 instances of overrun(loop time out of acceptable jitter range) were observed.
+	\begin{center}
+\includegraphics[scale=0.5]{fig/inverted.jpg}
+\captionof{figure}[Inverted Pendulum Setup]{Inverted Pendulum Setup\cite{deadline}}
+\label{fig:inverpen}
+\end{center}
+
+\end{itemize}
+
 
 	\chapter{ADAS Applications using ROS 2}
 		
@@ -263,6 +413,7 @@ In ROS 2, discovery of nodes is automatic through the underlying middleware. Nod
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
 		\section{Latency Analysis in micro-ROS}
+		node lifecycle partial
 		\section{Latency Analysis in ROS 2}
 		
 		

@@ -21,4 +21,3 @@ cp thesis.bib examples
 echo "moved, change something in thesis.tex, save and run make again"
 
 
-

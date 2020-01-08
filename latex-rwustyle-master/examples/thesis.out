@@ -10,9 +10,9 @@
 \BOOKMARK [1][-]{section.2.1}{ROS\0402\040Concepts}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{ROS\0401\040vs\040ROS\0402}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.3}{micro-ROS\040Architecture}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.4}{Embedded\040Systems}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{Hardware\040and\040Communication\040Protocols\040Used}{chapter.2}% 13
 \BOOKMARK [1][-]{section.2.5}{Real-Time\040Systems}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.6}{Previous\040Research\040Results}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.6}{Research\040by\040ROS\040Community}{chapter.2}% 15
 \BOOKMARK [0][-]{chapter.3}{ADAS\040Applications\040using\040ROS\0402}{}% 16
 \BOOKMARK [1][-]{section.3.1}{Lane\040Detection\040using\040Camera}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.2}{Auto\040Stop\040using\040LIDAR}{chapter.3}% 18
@@ -29,5 +29,5 @@
 \BOOKMARK [1][-]{section.5.2}{Latency\040Analysis\040in\040ROS\0402}{chapter.5}% 29
 \BOOKMARK [0][-]{chapter.6}{Conclusion\040and\040Future\040Scope}{}% 30
 \BOOKMARK [0][-]{chapter.6}{List\040of\040Figures}{}% 31
-\BOOKMARK [0][-]{chapter*.9}{List\040of\040Tables}{}% 32
-\BOOKMARK [0][-]{chapter*.10}{Bibliography}{}% 33
+\BOOKMARK [0][-]{chapter*.8}{List\040of\040Tables}{}% 32
+\BOOKMARK [0][-]{chapter*.9}{Bibliography}{}% 33

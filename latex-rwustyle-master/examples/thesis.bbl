@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{datastats}
 B.~Krzanich, ``Data is the new oil in the future of automated driving.''
@@ -10,7 +10,7 @@ O.~Robotics, ``About ros.'' \url{https://www.ros.org/about-ros/}, 27.12.2019.
 
 \bibitem{ROS2distro}
 O.~Robotics, ``Distributions.''
-  \url{https://index.ros.org/doc/ros2/Releases/#releases}.
+  \url{https://index.ros.org/doc/ros2/Releases/#releases}, 27.12.2019.
 
 \bibitem{uros}
 micro ROS, ``Overview.'' \url{https://micro-ros.github.io/docs/overview/},
@@ -18,5 +18,51 @@ micro ROS, ``Overview.'' \url{https://micro-ros.github.io/docs/overview/},
 
 \bibitem{uroslogo}
 micro ROS, ``micro-ros.'' \url{https://micro-ros.github.io/}, 27.12.2019.
+
+\bibitem{topic}
+O.~Robotics, ``Topics.'' \url{http://wiki.ros.org/Topics}, 27.12.2019.
+
+\bibitem{messages}
+O.~Robotics, ``Messages.'' \url{http://wiki.ros.org/Messages}, 27.12.2019.
+
+\bibitem{node_topic}
+A.~Bail, ``Robotics and ros.''
+  \url{https://www.slideshare.net/ArnoldBail/robotics-and-ros}, 27.12.2019.
+
+\bibitem{DDS}
+D.~Foundation, ``What is dds.''
+  \url{https://www.dds-foundation.org/what-is-dds-3/}, 03.01.2020.
+
+\bibitem{qos}
+O.~Robotics, ``About quality of service settings.''
+  \url{https://index.ros.org/doc/ros2/Concepts/About-Quality-of-Service-Settings/},
+  03.01.2020.
+
+\bibitem{rosvsros2}
+T.~A. Y.~Maruyama, S.~Kato, ``Exploring the performance of ros2.'' Proceedings
+  of the 13th International Conference on Embedded Software, pp. 5:1-5:10,
+  2016.
+
+\bibitem{urosarc}
+micro ROS, ``micro-ros-setup.''
+  \url{https://github.com/micro-ROS/micro-ros-build/blob/crystal/micro_ros_setup/README.md},
+  03.01.2020.
+
+\bibitem{let}
+micro ROS, ``Real-time executor.''
+  \url{https://micro-ros.github.io/docs/concepts/client_library/real-time_executor/},
+  03.01.2020.
+
+\bibitem{olimex}
+Olimex, ``Stm32-e407.''
+  \url{https://www.olimex.com/Products/ARM/ST/STM32-E407/open-source-hardware},
+  03.01.2020.
+
+\bibitem{waveshare}
+Waveshare, ``Open407i-c standard, stm32f4 development board.''
+  \url{https://www.waveshare.com/Open407I-C-Standard.htm}, 03.01.2020.
+
+\bibitem{deadline}
+A.~R.~T. J.~Kay, ``Real-time control in ros and ros 2.0.'' ROSCon15, 2015.
 
 \end{thebibliography}

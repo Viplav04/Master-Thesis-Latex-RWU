@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  3 JAN 2020 19:09
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  8 JAN 2020 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -819,27 +819,27 @@ LaTeX Warning: Unused global option(s):
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 33.
+(lastpage)             ! on input line 35.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -847,68 +847,68 @@ Package lastpage Info: Please have a look at the pageslts package at
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 33.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 33.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 33.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 33.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 33.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 33.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 33.
-LaTeX Font Info:    Redeclaring math accent \check on input line 33.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 33.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 33.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 33.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 33.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 33.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 35.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 35.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 35.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 35.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 35.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 35.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 35.
+LaTeX Font Info:    Redeclaring math accent \check on input line 35.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 35.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 35.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 35.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 35.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 33.
+(Font)              `operators' in the math version `normal' on input line 35.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/BarlowSemiCondensed(0)/m/n on input 
-line 33.
+line 35.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 33.
+(Font)              `operators' in the math version `bold' on input line 35.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/BarlowSemiCondensed(0)/m/n on input
- line 33.
+ line 35.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/BarlowSemiCondensed(0)/m/n --> TU/BarlowSemiCondense
-d(0)/m/n on input line 33.
+d(0)/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/BarlowSemiCondensed(0)/m/it on inpu
-t line 33.
+t line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/BarlowSemiCondensed(0)/bx/n on inpu
-t line 33.
+t line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/BarlowSemiCondensed(0)/m/n on input
- line 33.
+ line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/BarlowSemiCondensed(0)/m/n --> TU/BarlowSemiCondense
-d(0)/bx/n on input line 33.
+d(0)/bx/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/BarlowSemiCondensed(0)/bx/it on in
-put line 33.
+put line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/BarlowSemiCondensed(0)/bx/n on inp
-ut line 33.
+ut line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 35.
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 35.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -917,9 +917,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count281
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
@@ -932,14 +932,14 @@ Package caption Info: End \AtBeginDocument code.
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 38--43
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 49.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 49.
+(Font)              <5> on input line 51.
 [1
 
 ] [2
@@ -969,6 +969,11 @@ chapter 1.
 File: fig/autonomous-vehicle-data-intel-100697604-large.jpg Graphic file (type 
 bmp)
 <fig/autonomous-vehicle-data-intel-100697604-large.jpg>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 91.
+See the caption package documentation for explanation.
+
 [7
 
 
@@ -986,12 +991,12 @@ File: fig/ardent-small.png Graphic file (type bmp)
 
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 135.
+(caption)                outside box or environment on input line 137.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 135.
+(caption)                particular \caption on input line 137.
 See the caption package documentation for explanation.
 
 File: fig/microROS-big-logo.png Graphic file (type bmp)
@@ -1000,55 +1005,104 @@ File: fig/microROS-big-logo.png Graphic file (type bmp)
 
 ]
 chapter 2.
-
-LaTeX Warning: Citation `topic' on page 10 undefined on input line 180.
-
-
-LaTeX Warning: Citation `messages' on page 10 undefined on input line 187.
-
-File: fig/node_topic.jpg Graphic file (type bmp)
-<fig/node_topic.jpg>
-
-LaTeX Warning: Citation `node_topic' on page 10 undefined on input line 191.
-
-
-LaTeX Warning: Citation `node_topic' on page 10 undefined on input line 191.
-
 [10
 
 
-] [11]
+]
+File: fig/node_topic.jpg Graphic file (type bmp)
+<fig/node_topic.jpg>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 193.
+See the caption package documentation for explanation.
+
+File: fig/DDS.jpg Graphic file (type bmp)
+<fig/DDS.jpg>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 209.
+See the caption package documentation for explanation.
+
+[11] [12]
+File: fig/ros1_vs_ros2.jpg Graphic file (type bmp)
+<fig/ros1_vs_ros2.jpg>
+File: fig/uros_arc.jpg Graphic file (type bmp)
+<fig/uros_arc.jpg>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 289.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (16.39632pt too wide) in paragraph at lines 288--289
+ [] 
+ []
+
+[13
+
+] [14]
+File: fig/STM32-E407.jpg Graphic file (type bmp)
+<fig/STM32-E407.jpg>
+File: fig/Open407I-C.jpg Graphic file (type bmp)
+<fig/Open407I-C.jpg>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 334.
+See the caption package documentation for explanation.
+
+[15]
+File: fig/deadline.jpg Graphic file (type bmp)
+<fig/deadline.jpg>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 359.
+See the caption package documentation for explanation.
+
+[16]
+File: fig/inverted.jpg Graphic file (type bmp)
+<fig/inverted.jpg>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 379.
+See the caption package documentation for explanation.
+
+[17]
 chapter 3.
-[12
+[18
 
 
 ]
 chapter 4.
-[13
+[19
 
 
 ]
 chapter 5.
-[14
+[20
 
 
 ]
 chapter 6.
-[15
+[21
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [16
+ [22
 
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- (./thesis.bbl [17
+ (./thesis.bbl [23
 
 
 ]
@@ -1057,30 +1111,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--7
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] [] [][][] []
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+[]\TU/BarlowSemiCondensed(0)/m/n/12 O. Robotics, “Distributions.” []$[][][][][]
+ [] [] [] [][][][][] [] [][][] [] [][][] [] [][][] [] [][][][] [] [][][][][][][
+][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
+[]\TU/BarlowSemiCondensed(0)/m/n/12 A. Bail, “Robotics and ros.” []$[][][][][] 
+[] [] [] [][][] [] [][][][][][][][][][] [] [][][] [] [][][][][][][][][][] []
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 37--40
+[]\TU/BarlowSemiCondensed(0)/m/n/12 O. Robotics, “About quality of service sett
+ings.” []$[][][][][] [] [] [] [][][][][] [] [][][] [] [][][] [] [][][] [] [][][
+][] []
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 47--50
+[]\TU/BarlowSemiCondensed(0)/m/n/12 micro ROS, “micro-ros-setup.” []$[][][][][]
+ [] [] [] [][][][][][] [] [][][] [] [][][][][][][][][][] [] [][][][][][][][][][
+][][][][][][][] []
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 52--55
+[]\TU/BarlowSemiCondensed(0)/m/n/12 micro ROS, “Real-time executor.” []$[][][][
+][] [] [] [] [][][][][][][][][][] [] [][][][][][] [] [][] [] [][][][] [] [][][]
+[][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
+[]\TU/BarlowSemiCondensed(0)/m/n/12 Olimex, “Stm32-e407.” []$[][][][][] [] [] [
+] [][][] [] [][][][][][] [] [][][] [] [][][][][][][][] [] [][][] [] [][] [] [][
+][][][][][][][][][] []
+ []
+
 ) 
 AED: lastpage setting LastPage
-[18
+[24
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 437.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 437.
  (./thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 286.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 286.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 286.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 437.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 437.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 437.
  ) 
 Here is how much of TeX's memory you used:
- 24038 strings out of 493007
- 485617 string characters out of 6136718
- 717381 words of memory out of 5000000
- 27814 multiletter control sequences out of 15000+600000
+ 24080 strings out of 493007
+ 486280 string characters out of 6136718
+ 724381 words of memory out of 5000000
+ 27849 multiletter control sequences out of 15000+600000
  533536 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 64i,19n,87p,10425b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,87p,10425b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (18 pages).
+Output written on thesis.pdf (24 pages).
