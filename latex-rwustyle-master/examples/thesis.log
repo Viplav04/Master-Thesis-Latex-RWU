@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  8 JAN 2020 18:58
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  9 JAN 2020 19:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1068,41 +1068,104 @@ File: fig/inverted.jpg Graphic file (type bmp)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 379.
+(caption)                particular \caption on input line 376.
 See the caption package documentation for explanation.
 
-[17]
+[17] [18]
 chapter 3.
-[18
+File: fig/ros2adas.png Graphic file (type bmp)
+<fig/ros2adas.png>
 
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 396.
+See the caption package documentation for explanation.
 
-]
-chapter 4.
+File: fig/canny1.png Graphic file (type bmp)
+<fig/canny1.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 410.
+See the caption package documentation for explanation.
+
 [19
 
 
 ]
+File: fig/canny.png Graphic file (type bmp)
+<fig/canny.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 416.
+See the caption package documentation for explanation.
+
+File: fig/hough.png Graphic file (type bmp)
+<fig/hough.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 422.
+See the caption package documentation for explanation.
+
+[20]
+File: fig/finaladas.png Graphic file (type bmp)
+<fig/finaladas.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 428.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 2680) in paragraph at lines 435--436
+\TU/BarlowSemiCondensed(0)/m/n/12 The robot has 3 wheels and a differntial driv
+e to enable turning. ROS 2 offers a built-in
+ []
+
+[21]
+File: fig/laser.png Graphic file (type bmp)
+<fig/laser.png>
+File: fig/laser2.png Graphic file (type bmp)
+<fig/laser2.png>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 444.
+See the caption package documentation for explanation.
+
+File: fig/final2adas.png Graphic file (type bmp)
+<fig/final2adas.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 449.
+See the caption package documentation for explanation.
+
+[22] [23]
+chapter 4.
+[24
+
+
+]
 chapter 5.
-[20
+[25
 
 
 ]
 chapter 6.
-[21
+[26
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [22
+ [27
 
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- (./thesis.bbl [23
+ (./thesis.bbl [28
 
 
 ]
@@ -1152,26 +1215,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--60
 ][][][][][][][][][] []
  []
 
-) 
-AED: lastpage setting LastPage
-[24
+[29
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 437.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 437.
+Underfull \hbox (badness 10000) in paragraph at lines 81--85
+[]\TU/BarlowSemiCondensed(0)/m/n/12 V. Setia, “Adas application with ros2 using
+ camera and lidar us-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--85
+\TU/BarlowSemiCondensed(0)/m/n/12 ing gazebo simulator.” []$[][][][][] [] [] []
+ [][][][][][] [] [][][] [] [][][][][][][][] [] [][][][] []
+ []
+
+
+Overfull \hbox (138.75238pt too wide) in paragraph at lines 81--85
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][]$[]\TU/BarlowSemiCondensed(0)/m/n
+/12 ,
+ []
+
+) 
+AED: lastpage setting LastPage
+[30]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
  (./thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 437.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 437.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 437.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 496.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 496.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 496.
  ) 
 Here is how much of TeX's memory you used:
- 24080 strings out of 493007
- 486280 string characters out of 6136718
+ 24124 strings out of 493007
+ 487031 string characters out of 6136718
  724381 words of memory out of 5000000
- 27849 multiletter control sequences out of 15000+600000
- 533536 words of font info for 53 fonts, out of 8000000 for 9000
+ 27884 multiletter control sequences out of 15000+600000
+ 533544 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 64i,20n,87p,10425b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,87p,10425b,733s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (24 pages).
+Output written on thesis.pdf (30 pages).

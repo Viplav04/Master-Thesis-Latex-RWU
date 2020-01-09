@@ -13,17 +13,19 @@
   \item [{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}
 		\nompageref{9}
   \item [{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}
-		\nompageref{15}
+		\nompageref{16}
   \item [{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}
 		\nompageref{15}
   \item [{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}
-		\nompageref{14}
+		\nompageref{15}
   \item [{LIDAR}]\begingroup Light Detection and Ranging\nomeqref {\relax 0.0}
 		\nompageref{3}
   \item [{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}
 		\nompageref{15}
   \item [{OFERA}]\begingroup Open Framework for Embedded Robot Applications\nomeqref {\relax 1.0}
 		\nompageref{9}
+  \item [{OpenCV}]\begingroup Open Computer Vision\nomeqref {\relax 3.0}
+		\nompageref{19}
   \item [{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}
 		\nompageref{14}
   \item [{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}

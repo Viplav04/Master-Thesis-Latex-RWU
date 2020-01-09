@@ -12,6 +12,13 @@
 \contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Deadline and Jitter in Real-Time Systems}}{16}{figure.2.6}
 \contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Inverted Pendulum Setup}}{17}{figure.2.7}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces ADAS Simulator using ROS 2 and Gazebo}}{19}{figure.3.1}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Gazebo Environment}}{20}{figure.3.2}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Canny Edge Detection}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Line Detection using Hough Transform}}{21}{figure.3.4}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Lane Detection}}{21}{figure.3.5}
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Laser and Camera Data Visualisation}}{22}{figure.3.6}
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Auto Stop Feature}}{23}{figure.3.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

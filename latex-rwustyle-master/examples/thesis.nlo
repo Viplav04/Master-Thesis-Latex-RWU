@@ -10,9 +10,10 @@
 \nomenclatureentry{aPOSIX@[{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}|nompageref}{14}
 \nomenclatureentry{aANSI@[{ANSI}]\begingroup American National Standards Institute\nomeqref {\relax 2.0}|nompageref}{14}
 \nomenclatureentry{aUSB@[{USB}]\begingroup Universal Serial Bus\nomeqref {\relax 2.0}|nompageref}{14}
-\nomenclatureentry{aLET@[{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}|nompageref}{14}
+\nomenclatureentry{aLET@[{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}|nompageref}{15}
 \nomenclatureentry{aMCU@[{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}|nompageref}{15}
 \nomenclatureentry{aIP@[{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}|nompageref}{15}
 \nomenclatureentry{aUDP@[{UDP}]\begingroup User Datagram Protocol\nomeqref {\relax 2.0}|nompageref}{15}
 \nomenclatureentry{aUART@[{UART}]\begingroup Universal Asynchronous Receiver-Transmitter\nomeqref {\relax 2.0}|nompageref}{15}
-\nomenclatureentry{aI2C@[{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}|nompageref}{15}
+\nomenclatureentry{aI2C@[{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}|nompageref}{16}
+\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Computer Vision\nomeqref {\relax 3.0}|nompageref}{19}

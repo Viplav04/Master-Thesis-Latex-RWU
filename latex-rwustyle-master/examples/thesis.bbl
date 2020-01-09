@@ -65,4 +65,22 @@ Waveshare, ``Open407i-c standard, stm32f4 development board.''
 \bibitem{deadline}
 A.~R.~T. J.~Kay, ``Real-time control in ros and ros 2.0.'' ROSCon15, 2015.
 
+\bibitem{ingo}
+D.~Casini, T.~Bla{\ss}, I.~L{\"u}tkebohle, and B.~B. Brandenburg,
+  ``{Response-Time Analysis of ROS 2 Processing Chains Under Reservation-Based
+  Scheduling},'' in {\em 31st Euromicro Conference on Real-Time Systems (ECRTS
+  2019)} (S.~Quinton, ed.), vol.~133 of {\em Leibniz International Proceedings
+  in Informatics (LIPIcs)}, (Dagstuhl, Germany), pp.~6:1--6:23, Schloss
+  Dagstuhl--Leibniz-Zentrum fuer Informatik, 2019.
+
+\bibitem{nobleo}
+Nobleo, ``Ros2 performance.'' \url{https://github.com/nobleo/ros2_performance},
+  2019.
+
+\bibitem{ADASsim}
+V.~Setia, ``Adas application with ros2 using camera and lidar using gazebo
+  simulator.''
+  \url{https://github.com/Viplav04/ADAS_ROS2-OpenCV-Lane-Detection-Auto-Braking-with-LIDAR-Object-Detection-Gazebo-Teleop-Keyboard},
+  2019.
+
 \end{thebibliography}

@@ -30,7 +30,7 @@ xelatex,
 \ohead{\headmark}
 \setlength{\nomlabelwidth}{2cm}
 \setlength{\nomitemsep}{-\parsep}
-
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -312,7 +312,7 @@ ROS 2 is supported on Linux, Windows 10, macOS and offers the possibilty to run 
   \vspace*{0.5cm}
   
   
-Robot applications require deterministic(predictable) execution of callbacks under all conditions and time constraints.
+Robot applications require deterministic(predictable) execution of callbacks under all conditions and time constraints. Since the messages are buffered in DDS, ROS 2  introduces the concept of Executor, to support execution management (prioritization of callbacks).
 The Logical Execution Time(LET)\nomenclature{LET}{Logical Execution Time} is a known concept in automotive domain to simplify synchronization in process scheduling. If refers to the concept to schedule multiple ready tasks in such a way, that first all input data is read for all tasks, and then all tasks are executed.\cite{let}
 
 This 2 step approach of the LET Executor guarantees a deterministic execution of callbacks.
@@ -367,9 +367,6 @@ Real-time systems should produce reproducable and correct computations at the co
 	\end{itemize}
 	
 	
-	\vspace*{0.5cm}	
-	
-	
 	\section{Research by ROS Community}
 \vspace*{0.5cm}
 \begin{itemize}
@@ -379,7 +376,13 @@ Real-time systems should produce reproducable and correct computations at the co
 \captionof{figure}[Inverted Pendulum Setup]{Inverted Pendulum Setup\cite{deadline}}
 \label{fig:inverpen}
 \end{center}
-
+\item {\bfseries Non-deterministic scheduling by ROS 2 Standard Executor} - In a recent study by researchers at Bosch (for more details, see\cite{ingo}), it has been found that the ROS 2 C++ Executor in version Crystal Clemmys has some undesired properties for real-time scheduling. They are:
+\begin{itemize}
+\item The Executor gives highest priority to timers and therefore messages from the DDS queue are not processed in overloaded situations.
+\item Non-preemptive round-robin scheduling of non-timer handles/entities(subscriptions, services,clients) leads to priority inversion, lower priority callbacks may block higher priority callbacks leading to high processing time. Also, this problem is further aggravated as only one message per handle is considered, even when multiple messages of the same topic are available, only one instance is processed by the Executor which causes backlog and hence, priority inversion. 
+\end{itemize} 
+These shortcomings led to the development of the LET Executor in micro-ROS to allow for deterministic execution.
+\item {\bfseries High CPU Overhead by ROS 2 Executor} - In a study by Nobleo Technology (see \cite{nobleo}), it has been concluded that the ROS 2 SingleThreadedExecutor uses a lot of CPU power and generates overhead (unnecessary computation, memory allocations, etc.). ROS 2 Executor needs to be optimised otherwise normal ROS 2 cannot function properly on ARM A-class embedded boards. Based on the discussions between the ROS developers and the community, the Executor is undergoing some design changes to improve its performance. Some changes are planned for the next ROS 2 release Foxy due in May, 2020.
 \end{itemize}
 
 
@@ -387,12 +390,68 @@ Real-time systems should produce reproducable and correct computations at the co
 		
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
+This is an open source project using License Apache 2.0 to understand simple ADAS applications using ROS 2 Crystal and Gazebo Simulator. You can drive around the robot in the simulator and have Lane Detection and Auto Brake when object is detected. To run this simulator, please refer to the instructions given in my Github repository, see link - \href{https://github.com/Viplav04/ADAS_ROS2-OpenCV-Lane-Detection-Auto-Braking-with-LIDAR-Object-Detection-Gazebo-Teleop-Keyboard}{ADAS Simulator using ROS 2 and Gazebo}\cite{ADASsim}
+	\begin{center}
+\includegraphics[scale=0.26]{fig/ros2adas.png}
+\captionof{figure}[ADAS Simulator using ROS 2 and Gazebo]{ADAS Simulator using ROS 2 and Gazebo}
+\label{fig:ADAS}
+\end{center}
+
+ROS 2 and Gazebo are both developed by Open Robotics. There are various plugins available to convert Gazebo to ROS 2 data. I have used a camera sensor and a laser sensor in the simulator with my robot which also has a differential drive and can be driven around with the help of a keyboard. The algorithms are developed using C++ language.
+
+Firstly, a world file is created in the Gazebo Simulator to add roads and humans. The robot is modified from the differential drive demo already available in ROS 2 Gazebo tutorials and a camera and laser sensor is added. This setup consists of 3 nodes as explained below.
 		\section{Lane Detection using Camera}
+	\vspace*{0.5cm}
+	Important steps to do lane detection for an image are : 
+	\begin{itemize}
+\item	The input image subscribed from Gazebo simulator is a ROS message because of the camera plugin. First, it has to be encoded to a raw image to use Open Computer Vision(OpenCV)\nomenclature{OpenCV}{Open Computer Vision} libraries. The raw image is then converted to a grayscale image.
+\begin{center}
+\includegraphics[scale=0.4]{fig/canny1.png}
+\captionof{figure}[Gazebo Environment]{Gazebo Environment}
+\label{fig:gazebo}
+\end{center}
+\item Canny Edge Detector from OpenCV libraries is applied to the greyscale image to detect edges.
+	\begin{center}
+\includegraphics[scale=0.3]{fig/canny.png}
+\captionof{figure}[Canny Edge Detection]{Canny Edge Detection}
+\label{fig:canny}
+\end{center}
+\item An image mask is created according to the input image size which filters out the edges in the bottom half of the screen to show only the bottom edges. Then, Hough Transform from OpenCV libraries is applied to the resulting image which detects straight lines. The straight lines are then superimposed to the original raw image.
+\begin{center}
+\includegraphics[scale=0.3]{fig/hough.png}
+\captionof{figure}[Line Detection using Hough Transform]{Line Detection using Hough Transform}
+\label{fig:hough}
+\end{center}
+\item The lines detected are further optimised and a box is drawn connecting the two lines to display the lane. Also. turning advice to stay in the lane is printed onto the image calculating the direction in which the robot is heading.
+\begin{center}
+\includegraphics[scale=0.3]{fig/finaladas.png}
+\captionof{figure}[Lane Detection]{Lane Detection}
+\label{fig:lane}
+\end{center}
+	\end{itemize}
+		
+				\section{Driver Control using Keyboard}	
+	\vspace*{0.5cm}
+The robot has 3 wheels and a differntial drive to enable turning. ROS 2 offers a built-in teleop\textunderscore twist\textunderscore keyboard package to send messages to the robot from the keyboard. The messages are already available in ROS 2 known as Twist messages. The differential drive plugin with Gazebo simulator can be enabled by modifying the robot model file in Gazebo. 	
+
 		\section{Auto Stop using LIDAR}
-		\section{Driver Control using Keyboard}	
-	
-	
-	
+		\vspace*{0.5cm}
+		
+The laser sensor data gives out the minimum range of any object in its field. Range messages are already available in ROS 2. Then, an algorithm is applied to the incoming data and a condition is added. When the object is within a range of 4m, this node publishes a new Twist message to the robot telling it to stop. Also, it sends a "STOP, Reverse or Change direction" comment to the user and also prints out in the image running the in the lane detection node. The laser data can be visualized in the RViz package of ROS 2.
+			\begin{center}
+\includegraphics[scale=0.3]{fig/laser.png}
+\includegraphics[scale=0.17]{fig/laser2.png}
+\captionof{figure}[Laser and Camera Data Visualisation]{Laser and Camera Data Visualisation}
+\label{fig:laser}
+\end{center}
+			\begin{center}
+\includegraphics[scale=0.3]{fig/final2adas.png}
+\captionof{figure}[Auto Stop Feature]{Auto Stop Feature}
+\label{fig:lane1}
+\end{center}
+This project helps us to understand ROS 2 concepts and also explore its versatile libraries. Along with the Gazebo simulator, different kinds of robot applications can be tested and simulated in the worst case scenarios. 
+
+Different types of data can be accessed in a single node with multiple publishers or subscribers. Also, nodes can interact and discover themselves automatically, the user just has to source the ROS 2 software and launch the created nodes in different terminals in Linux.
 	\chapter{Test Setup}
 		
 \rofoot[\pagemark]{\pagemark}
