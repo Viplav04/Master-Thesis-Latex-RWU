@@ -3,32 +3,33 @@
 \contentsline {chapter}{Acknowledgement}{2}{section*.2}
 \contentsline {chapter}{Abstract}{3}{section*.3}
 \contentsline {chapter}{List of abbreviations, formulas and indexes}{4}{section*.3}
-\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{7}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objectives}{8}{section.1.2}
-\contentsline {section}{\numberline {1.3}Robot Operating System(ROS)}{8}{section.1.3}
-\contentsline {chapter}{\numberline {2}State of the Art}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}ROS 2 Concepts}{10}{section.2.1}
-\contentsline {section}{\numberline {2.2}ROS 1 vs ROS 2}{13}{section.2.2}
-\contentsline {section}{\numberline {2.3}micro-ROS Architecture}{14}{section.2.3}
-\contentsline {section}{\numberline {2.4}Hardware and Communication Protocols Used}{15}{section.2.4}
-\contentsline {section}{\numberline {2.5}Real-Time Systems}{16}{section.2.5}
-\contentsline {section}{\numberline {2.6}Research by ROS Community}{17}{section.2.6}
-\contentsline {chapter}{\numberline {3}ADAS Applications using ROS 2}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Lane Detection using Camera}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Driver Control using Keyboard}{22}{section.3.2}
-\contentsline {section}{\numberline {3.3}Auto Stop using LIDAR}{22}{section.3.3}
-\contentsline {chapter}{\numberline {4}Test Setup}{24}{chapter.4}
-\contentsline {section}{\numberline {4.1}Testing micro-ROS}{24}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Components}{24}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Procedure}{24}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Testing ROS2}{24}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Components}{24}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Procedure}{24}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Latency Analysis in micro-ROS}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Latency Analysis in ROS 2}{25}{section.5.2}
-\contentsline {chapter}{\numberline {6}Conclusion and Future Scope}{26}{chapter.6}
-\contentsline {chapter}{List of Figures}{26}{chapter.6}
-\contentsline {chapter}{List of Tables}{27}{chapter*.8}
-\contentsline {chapter}{Bibliography}{28}{chapter*.9}
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{8}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objectives}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Robot Operating System(ROS)}{9}{section.1.3}
+\contentsline {chapter}{\numberline {2}State of the Art}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}ROS 2 Concepts}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}ROS 1 vs ROS 2}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}micro-ROS Architecture}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}Hardware and Communication Protocols Used}{16}{section.2.4}
+\contentsline {section}{\numberline {2.5}Real-Time Systems}{17}{section.2.5}
+\contentsline {section}{\numberline {2.6}Research by ROS Community}{18}{section.2.6}
+\contentsline {chapter}{\numberline {3}ADAS Applications using ROS 2}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}Lane Detection using Camera}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}Driver Control using Keyboard}{23}{section.3.2}
+\contentsline {section}{\numberline {3.3}Auto Stop using LIDAR}{23}{section.3.3}
+\contentsline {chapter}{\numberline {4}Test Setup}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Testing ROS 2}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Components}{25}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Procedure}{26}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Testing micro-ROS}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Components}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Procedure}{27}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Latency Analysis in ROS 2}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Latency Analysis in micro-ROS}{32}{section.5.2}
+\contentsline {section}{\numberline {5.3}Discussion}{34}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion and Future Scope}{35}{chapter.6}
+\contentsline {chapter}{List of Figures}{35}{chapter.6}
+\contentsline {chapter}{List of Tables}{36}{chapter*.8}
+\contentsline {chapter}{Bibliography}{37}{chapter*.9}

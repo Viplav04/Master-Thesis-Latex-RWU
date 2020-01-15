@@ -373,6 +373,7 @@ Real-time systems should produce reproducable and correct computations at the co
 \item {\bfseries Inverted Pendulum demo} - The unstable arrangement of an inverted-pendulum is used as a means to test  the real-time performance of ROS 2. A simulation is performed with ROS 2 where, the pendulum is balanced by a motor and a moving cart at the base. The motor command and sensor feedback are configured as ROS 2 messages and these are updated with a loop time of 1 msec. Linux preemtible kernel is used which offers real-time capability. High scheduling priority is given to the node and memory allocations are done during initialisation of the node. Dynamic memory allocations are blocked as they are not real-time safe. J. Kay and A.R. Tsouroukdissian have implemented this package with ROS 2 Alpha release. They also mention that DDS can be fine tuned for better real-time performance. Their goal was to get less than 3\%(30 microsecs) jitter. Without any stress to the system, the maximum jitter was 3.51\% , minimum was 0.16\%, and mean was 0.46\% but with stress on the processor, the maximum jitter was 25.8\% , minimum was 0.14\%, and mean was 0.38\%. Also, 3 instances of overrun(loop time out of acceptable jitter range) were observed.
 	\begin{center}
 \includegraphics[scale=0.5]{fig/inverted.jpg}
+
 \captionof{figure}[Inverted Pendulum Setup]{Inverted Pendulum Setup\cite{deadline}}
 \label{fig:inverpen}
 \end{center}
@@ -390,11 +391,12 @@ These shortcomings led to the development of the LET Executor in micro-ROS to al
 		
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
-This is an open source project using License Apache 2.0 to understand simple ADAS applications using ROS 2 Crystal and Gazebo Simulator. You can drive around the robot in the simulator and have Lane Detection and Auto Brake when object is detected. To run this simulator, please refer to the instructions given in my Github repository, see link - \href{https://github.com/Viplav04/ADAS_ROS2-OpenCV-Lane-Detection-Auto-Braking-with-LIDAR-Object-Detection-Gazebo-Teleop-Keyboard}{ADAS Simulator using ROS 2 and Gazebo}\cite{ADASsim}
+This is an open source project using License Apache 2.0 to understand simple ADAS applications using ROS 2 Crystal and Gazebo Simulator. You can drive around the robot in the simulator and have Lane Detection and Auto Brake when object is detected. To run this simulator, please refer to the instructions given in my Github repository, see link - \href{https://github.com/Viplav04/ADAS-ROS2-Gazebo-Simulator}{ADAS Simulator using ROS 2 and Gazebo}\cite{ADASsim}
 	\begin{center}
 \includegraphics[scale=0.26]{fig/ros2adas.png}
 \captionof{figure}[ADAS Simulator using ROS 2 and Gazebo]{ADAS Simulator using ROS 2 and Gazebo}
 \label{fig:ADAS}
+
 \end{center}
 
 ROS 2 and Gazebo are both developed by Open Robotics. There are various plugins available to convert Gazebo to ROS 2 data. I have used a camera sensor and a laser sensor in the simulator with my robot which also has a differential drive and can be driven around with the help of a keyboard. The algorithms are developed using C++ language.
@@ -456,26 +458,211 @@ Different types of data can be accessed in a single node with multiple publisher
 		
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
-
-	\section{Testing micro-ROS}
+The main part of this thesis work was to set up the micro-ROS environment on the STM32 Embedded board and test it, but ROS 2 testing packages were also available and therefore the standard ROS 2 stack was also tested.
+	
+\section{Testing ROS 2}
+\vspace*{0.5cm}
+The testing of ROS 2 is based on the inverted pendulum demo. The demo is different for ROS 2 Crystal and Dashing versions. ROS 2 Crystal has an in-built demo as part of its package. There is another version of this demo in development for ROS 2 Dashing and newer versions. We can also visualize the inverted  pendulum simulation in RViz.
+			\begin{center}
+\includegraphics[scale=0.51]{fig/invertedpendulum.png}
+\captionof{figure}[Inverted Pendulum Simulation in RViz]{Inverted Pendulum Simulation in RViz}
+\label{fig:invertedpendulum}
+\end{center}
 
 	\subsection{Components}
+	\vspace*{0.5cm}
+	\begin{itemize}
+	\item Linux system with Ubuntu 18.04 installed
+	\item Linux real-time patch and RT-PREEMPT kernel which offers real-time testing capability
+	\item ROS 2 Crystal and Dashing versions installed
+	\item Inverted Pendulum demo for Dashing (see \href{https://github.com/ros2-realtime-demo/pendulum}{ROS2-realtime-demo}\cite{rtpendulum}) 
+	\end{itemize}
 	\subsection{Procedure}	
+\vspace*{0.5cm}
+{\bfseries To set real-time settings in Linux kernel} :
+\begin{itemize}
+\item Ubuntu 18.04 has SecureBoot security feature. It only allows signed kernels to be installed. Therefore, the real-time kernel after installation has to be signed. To do this, see \href{https://askubuntu.com/questions/1081472/vmlinuz-4-18-12-041812-generic-has-invalid-signature}{Signing a kernel}.
+\item To set memory locking and high real-time scheduling priority, the following lines are added to the file /etc/security/limits.conf :
+\begin{itemize}
+\item "<user>  - memlock limit-in-kilobytes(kB)" (-1 for unlimited, we use 1000 kB\nomenclature{kB}{Kilobyte})
+\item "<user>  - rtprio 75" , warning : do not set priority to 99 as it may interfere with important computer processes.
+\item The user has to logout and login again to see the changes. To run as a root user, type "sudo su" in a terminal and enter the password to have access to real-time settings and then launch the pendulum demo as root.
+\end{itemize}
+\end{itemize}
 
-	\section{Testing ROS2}
+{\bfseries For ROS 2 Crystal} :
+\begin{itemize}
+\item The ROS 2 Crystal setup.bash file is sourced in a terminal and "pendulum\textunderscore demo>output.txt" command is launched as root user. The node writes the output to the text file.
+\item This node sends a 1000 messages for both the motor controller and feedback sensor with an update rate of 1 msec. The process was repeated 5 times and the average values were calculated.
+\item Then in another terminal, "stress --cpu 100" command was launched and also many applications were launched in the computer to put stress on the CPU and memory. Then again the pendulum demo was launched 5 times and observations were recorded.
+\end{itemize}
+{\bfseries For ROS 2 Dashing} :
+\begin{itemize}
+\item The pendulum demo package is downloaded in a pendulum\textunderscore ws folder and the environment is built. To run the demo, see the link mentioned above for the inverted pendulum demo for Dashing. We lock 1000 kB of memory for this node.
+\item This is a continuous simulation. In another terminal, after sourcing the ROS 2 Dashing environment and pendulum environment, "ros2 topic list" command is run. If the demo is enabled with "--pub-stats" as in the instructions, we should see controller and driver statistics topics. They can be launched by command "ros2 topic echo /topic\textunderscore name ". Then in another terminal, "stress --cpu 100" command was launched.
+\item The values were recorded every minute and the simulation was allowed to run for 10 minutes.
+\end{itemize}
+\section{Testing micro-ROS}
+\vspace*{0.5cm}
+This testing has been done with micro-ROS Crystal version. Dashing version is still not officially released and I had installation issues with it.
 	\subsection{Components}
+	\vspace*{0.5cm}
+	\begin{itemize}
+	\item Linux OS with Ubuntu 18.04 and micro-ROS and Nuttx repositories installed
+	\item Olimex STM32-E407 Embedded Board
+	\item Waveshare STM32-Open407C Embedded Board
+	\item USB to TTL UART PL-2303 converter cable
+	\item Waveshare UART TTL to Ethernet Converter DP83848
+	\item Ethernet cables
+	\item UART cables
+	\item BMP180 Pressure Sensor
+	\item Olimex JTAG USB OCD ARM Debugger(ARM-USB-OCD-H)
+	\item micro-USB cables
+	\end{itemize}
 	\subsection{Procedure}	
+	\vspace*{0.5cm}
+	\begin{enumerate}
+	\item First, install micro-ROS and Nuttx repositories following instructions in this link - \href{https://micro-ros.github.io/docs/tutorials/basic/getting_started/}{micro-ROS Installation}\cite{urosinstall}.
+	\item In this setup, 2 boards with similar architectures were used. Waveshare board was made to work on a serial transport connection and the Olimex board with ethernet (UDP). There is a configuration file in directory "~/uros\textunderscore ws/firmware/mcu\textunderscore ws/uros/rmw\textunderscore microxrcedds/rmw\textunderscore microxrcedds\textunderscore c/\linebreak
+	rmw\textunderscore microxrcedds.config" where the type of transport and IP address can be changed.
+	\item The most time consuming step is to configure Nuttx to work with micro-ROS, pressure sensor, USB console, Ethernet, Debugging, etc. 
+	
+	This cannot be explained in brief, but the user can refer to these videos - \href{https://www.youtube.com/channel/UC0QciIlcUnjJkL5yJJBmluw/videos}{Nuttx Channel}\cite{Nuttxchannel}. 
+	
+	You can also find my configuration file at this link - \href{https://github.com/Viplav04/NuttX/tree/master/configs/olimex-stm32-e407/uros}{micro-ROS Configuration File}\cite{olimexconfigfile}.
+	\item After configuring Nuttx, the firware needs to be flashed onto the board. Connect the olimex board to the JTAG debugger and micro-USB cable to access the board's operating system (console). 
+	
+				\begin{center}
+\includegraphics[scale=0.2]{fig/olimexnshusb.jpg}
+\includegraphics[scale=0.05]{fig/jtagusbocd.jpg}
 
+\captionof{figure}[Olimex-stm32-e407 with Debugger]{Olimex-stm32-e407 with Debugger}
+\label{fig:jtag}
+\end{center}
+\item The configuration to enable micro-ROS examples, self-made publisher and subscriber with BMP180 pressure sensor, and also the delay test algorithm can be found in my repository. 
 
+To connect the pressure sensor with the board (you might need the help of the board's datasheet, see link - \href{https://www.olimex.com/Products/ARM/ST/STM32-E407/resources/STM32-E407.pdf}{Olimex-stm32-e407 datasheet}\cite{olimexdatasheet}), we need 4 UART cables and then connect them in the following sequence :
+				\begin{center}
+\includegraphics[scale=0.03,angle=270]{fig/pressuresensor.jpg}
+
+\captionof{figure}[BMP180 Pressure Sensor]{BMP180 Pressure Sensor}
+\label{fig:bmp180}
+\end{center}
+\begin{itemize}
+\item Connect Vcc to board's 3V(volts) terminal.
+\item Connect GND to board's Ground terminal.
+\item Connect SCL to board's DO terminal.
+\item Connect SDA to board's D1 terminal.
+\end{itemize}
+
+\item Connect the ethernet wire to the socket. After flashing is complete, press the reset button and open a terminal in your Linux computer. Type "dmesg" to check the USB port to which the board is connected.
+\item Then type "sudo minicom -s" and select the USB port and enter your password. Once minicom launches, press enter 3 times. Nuttx console will be seen in the terminal.
+\item Type "ifup eth0" to enable ethernet. Type "ifconfig" to check IP addresses of the device and network. Then type "mount -t procfs proc" to mount the file system to access the network applications.
+\item Type "help" to see all built-in applications. You should be able to see publisher, subscriber, bmp180\textunderscore publisher, bmp180\textunderscore subscriber, and delay\textunderscore test.
+\item The delay\textunderscore test adds a timestamp, then publishes a message and sends to the agent and subscribes it back again. Then it adds another timestamp and calculates the difference between the initial time and final time. Hence, we have the delay in micro-ROS communications.
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.3]{fig/delay.png}
+
+\captionof{figure}[Delay Test]{Delay Test}
+\label{fig:delay}
+\end{center}
+\item To increase the data sizes of the messages, custom ROS messages were created and testing was repeated with message sizes of 8 bytes ( an integer data size is 4 bytes), 16 bytes, 32 bytes, and 64 bytes.
+\begin{center}
+\includegraphics[scale=0.1]{fig/olimex.jpg}
+
+\captionof{figure}[Olimex Setup]{Olimex Setup}
+\label{fig:olimexsetup}
+\end{center}
+\item Similarly, set up the waveshare board. Skip steps 5 and 8 as we don't need pressure sensor and ethernet connection. Although, if required, DP83848 ethernet to UART converter can be used to setup ethernet as well. We will connect a USB to UART converter cable to enable serial transport of micro-ROS. To do this connect the wires as shown : 
+\begin{itemize}
+\item Black wire of connector to ground of the board using UART3 port
+\item Green wire to RX port.
+\item White wire to TX port.
+\end{itemize}
+\item Launch the micro-ROS Agent in another terminal in Linux. First source the ROS 2 crystal environment, then source the micro-ROS environment. Then go to the micro-ROS agent package in the install directory and launch micro-ROS agent with commands "./micro\textunderscore ros\textunderscore agent udp 8888" for IP connection and "./micro\textunderscore ros\textunderscore agent serial <USB port number for PL2303 driver>". Then launch the delay\textunderscore test application in Nuttx. delay\textunderscore test was done 50*10 times using a loop and all data was recorded
+\end{enumerate}
+\begin{center}
+\includegraphics[scale=0.15,angle=180]{fig/waveshare.jpg}
+
+\captionof{figure}[Waveshare Setup]{Waveshare Setup}
+\label{fig:wavesharesetup}
+\end{center}
 		\chapter{Results}
 			
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
-		\section{Latency Analysis in micro-ROS}
-		node lifecycle partial
+		
 		\section{Latency Analysis in ROS 2}
+\vspace*{0.5cm}
+{\bfseries ROS 2 Crystal}
+\begin{center}
+\includegraphics[scale=0.4]{fig/ros2crylatency.png}
+
+\captionof{table}[ROS 2 Crystal Latency]{ROS 2 Crystal Latency}
+\label{tab:ros2crystallatency}
+\end{center}
+In this package, the messages are sent every 1 ms. The goal of this package was to receive 1000 messages with maximum 3\% jitter(30 us). In this testing, 1 MB of memory and high real-time priority is available to the node. The package is not reliable as we can see we lose messages. Even though we have low latency values, still we can see the mean latency over 1 ms in 2 observations which is greater than the update rate. The maximum latency is 44.5 ms. We also see very high standard deviation values which suggests the software is not deterministic even without any stress on the CPU. The maximum jitter value is 33 ms which is way beyond the desired.
+\vspace*{0.5cm}
+
+
+{\bfseries ROS 2 Dashing}
+\vspace*{0.5cm}
+
+In this package, the messages are sent every 1 ms. In this testing, 1 MB of memory and high real-time priority is available to the node. The jitter and standard deviation keep on increasing with time. The maximum jitter value is 80 ms but the package defines the deadline as 2 ms. Although, the mean jitter value close to zero and the pendulum not falling down suggests firm real-time performance but the increasing standard deviation and high jitter values give us an impression that some improvements in the ROS 2 execution is required to make ROS 2 hard real-time. It should be kept in mind that the Linux real-time kernel does not guarantee a hard real-time system.
+\begin{center}
+\includegraphics[scale=0.4]{fig/ros2dashjitter.png}
+
+\captionof{table}[ROS 2 Dashing Jitter]{ROS 2 Dashing Jitter}
+\label{tab:ros2dashjit}
+\end{center}
+		\section{Latency Analysis in micro-ROS}
+		\vspace*{0.5cm}
 		
-		
+		Bugs
+\begin{center}
+\includegraphics[scale=0.3]{fig/uros8byteles.png}
+
+\captionof{figure}[Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 ms)]{Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 ms)}
+\label{fig:uros8byteles}
+\end{center}
+
+\nomenclature{MB}{Megabyte}
+\nomenclature{ns}{Nanoseconds}
+\nomenclature{ms}{Milliseconds}
+\nomenclature{us}{Microseconds}
+\begin{center}
+\includegraphics[scale=0.32]{fig/uros8byte.png}
+
+\captionof{figure}[Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 us)}
+\label{fig:uros8byte}
+\end{center}
+
+
+\begin{center}
+\includegraphics[scale=0.32]{fig/uros16byte.png}
+
+\captionof{figure}[Micro-ROS Latencies for Data Size of 16 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 16 bytes (Least count- 10 us)}
+\label{fig:uros16byte}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.32]{fig/uros32byte.png}
+
+\captionof{figure}[Micro-ROS Latencies for Data Size of 32 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 32 bytes (Least count- 10 us)}
+\label{fig:uros32byte}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.32]{fig/uros64byte.png}
+
+\captionof{figure}[Micro-ROS Latencies for Data Size of 64 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 64 bytes (Least count- 10 us)}
+\label{fig:uros64byte}
+\end{center}
+
+		\section{Discussion}
+		\vspace*{0.5cm}
+	Since, the packages and ways of testing for ROS 2 Crystal, ROS 2 Dashing and micro-ROS (ROS 2 Crystal) are different. The results should not be compared between them. However, we can still determine some common aspects of the their results.
+	ROS 2 Dashing pendulum demo provides more accurate results and also offers a continuous simulation.  
 		\chapter{Conclusion and Future Scope}
 			
 \rofoot[\pagemark]{\pagemark}

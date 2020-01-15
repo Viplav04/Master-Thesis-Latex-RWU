@@ -79,8 +79,30 @@ Nobleo, ``Ros2 performance.'' \url{https://github.com/nobleo/ros2_performance},
 
 \bibitem{ADASsim}
 V.~Setia, ``Adas application with ros2 using camera and lidar using gazebo
-  simulator.''
-  \url{https://github.com/Viplav04/ADAS_ROS2-OpenCV-Lane-Detection-Auto-Braking-with-LIDAR-Object-Detection-Gazebo-Teleop-Keyboard},
+  simulator.'' \url{https://github.com/Viplav04/ADAS-ROS2-Gazebo-Simulator},
+  2019.
+
+\bibitem{rtpendulum}
+C.~Lander Usategui San~Juan, ``Inverted pendulum demo.''
+  \url{https://github.com/ros2-realtime-demo/pendulum}, 2019.
+
+\bibitem{urosinstall}
+micro ROS, ``Tutorials.''
+  \url{https://micro-ros.github.io/docs/tutorials/basic/getting_started/},
+  2019.
+
+\bibitem{Nuttxchannel}
+N.~Channel.
+  \url{https://www.youtube.com/channel/UC0QciIlcUnjJkL5yJJBmluw/videos}, 2019.
+
+\bibitem{olimexconfigfile}
+V.~Setia, ``Olimex-stm32-e407 micro-ros configuration.''
+  \url{https://github.com/Viplav04/NuttX/tree/master/configs/olimex-stm32-e407/uros},
+  2019.
+
+\bibitem{olimexdatasheet}
+Olimex, ``Olimex-stm32-e407 user manual.''
+  \url{https://www.olimex.com/Products/ARM/ST/STM32-E407/resources/STM32-E407.pdf},
   2019.
 
 \end{thebibliography}
