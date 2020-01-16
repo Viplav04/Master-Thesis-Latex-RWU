@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  15 JAN 2020 19:41
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  16 JAN 2020 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1248,61 +1248,133 @@ See the caption package documentation for explanation.
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
+[]\TU/BarlowSemiCondensed(0)/bx/n/12 Case 2 \TU/BarlowSemiCondensed(0)/m/n/12 :
+ Using built-in publisher-subscriber of micro-ROS through eth-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
+\TU/BarlowSemiCondensed(0)/m/n/12 ernet (UDP) with two micro-ROS Agents with di
+fferent port numbers.
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 631--634
+\TU/BarlowSemiCondensed(0)/m/n/12 and then 2 Agents with different port number.
+ Message is sent every 1 second.
+ []
+
+
+Underfull \hbox (badness 7777) in paragraph at lines 635--638
+[]\TU/BarlowSemiCondensed(0)/bx/n/12 Case 4 \TU/BarlowSemiCondensed(0)/m/n/12 :
+ Built in publisher-subscriber with 1 Agent through ethernet (UDP)
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 635--638
+\TU/BarlowSemiCondensed(0)/m/n/12 and 1 Agent through serial (UART) communicati
+on. Data sending rate is 1 ms.
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 639--642
+[]\TU/BarlowSemiCondensed(0)/bx/n/12 Case 5 \TU/BarlowSemiCondensed(0)/m/n/12 :
+ Using BMP180 pressure sensor with 1 Agent through ethernet (UDP)
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 639--642
+\TU/BarlowSemiCondensed(0)/m/n/12 and 1 Agent through serial (UART) communicati
+on. Data is sent every 1 second.
+ []
+
+[32]
 File: fig/uros8byteles.png Graphic file (type bmp)
 <fig/uros8byteles.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 623.
+(caption)                particular \caption on input line 654.
 See the caption package documentation for explanation.
 
 File: fig/uros8byte.png Graphic file (type bmp)
 <fig/uros8byte.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 634.
+(caption)                particular \caption on input line 666.
 See the caption package documentation for explanation.
 
-[32]
+[33]
 File: fig/uros16byte.png Graphic file (type bmp)
 <fig/uros16byte.png>
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 642.
+(caption)                particular \caption on input line 674.
 See the caption package documentation for explanation.
 
 File: fig/uros32byte.png Graphic file (type bmp)
 <fig/uros32byte.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 649.
+(caption)                particular \caption on input line 681.
 See the caption package documentation for explanation.
 
 File: fig/uros64byte.png Graphic file (type bmp)
 <fig/uros64byte.png>
 
+Overfull \hbox (2.64964pt too wide) in paragraph at lines 686--687
+ [] 
+ []
+
+[34]
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 656.
+(caption)                particular \caption on input line 688.
 See the caption package documentation for explanation.
 
-[33] [34]
+File: fig/uros128byte.png Graphic file (type bmp)
+<fig/uros128byte.png>
+
+Overfull \hbox (1.3648pt too wide) in paragraph at lines 693--694
+ [] 
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 695.
+See the caption package documentation for explanation.
+
+File: fig/urosfinaldata.png Graphic file (type bmp)
+<fig/urosfinaldata.png>
+
+Package caption Warning: The caption type was already set to `figure'
+(caption)                 on input line 707.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 707.
+See the caption package documentation for explanation.
+
+[35] [36]
 chapter 6.
-[35
+[37
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [36
+ [38
 
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- (./thesis.bbl [37
+ (./thesis.bbl [39
 
 
 ]
@@ -1352,7 +1424,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--60
 ][][][][][][][][][] []
  []
 
-[38
+[40
 
 
 ]
@@ -1377,21 +1449,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
 ) 
 AED: lastpage setting LastPage
-[39]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 681.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 681.
+[41]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
  (./thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 681.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 681.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 681.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 755.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 755.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 755.
  ) 
 Here is how much of TeX's memory you used:
- 24201 strings out of 493007
- 488566 string characters out of 6136718
+ 24212 strings out of 493007
+ 488791 string characters out of 6136718
  724381 words of memory out of 5000000
- 27947 multiletter control sequences out of 15000+600000
+ 27956 multiletter control sequences out of 15000+600000
  533544 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  64i,20n,87p,10425b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (39 pages).
+Output written on thesis.pdf (41 pages).

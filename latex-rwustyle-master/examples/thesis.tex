@@ -123,7 +123,7 @@ It also offers support for different operating systems such as Linux, macOS, Mic
 {\bfseries	 ROS 2 Distributions}
 	 
 
-The ROS 2 Distributions are shown below in descending order of release date. Dashing Diademata is the first long term support version offered by the ROS developers. The work in this thesis is based on the version Crystal Clemmys as the Dashing version was released in May, 2019 and sufficient documentation for real-time testing was not available for it. 
+The ROS 2 Distributions are shown below in descending order of release date. Dashing Diademata is the first long term support version offered by the ROS developers. The work in this thesis is based on the versions Crystal Clemmys and Dashing Diademata. Dashing version release states that it is an improvement over the Crystal version especially for using less memory during runtime which helps in achieving better real-time performance. 
 
  
  
@@ -171,7 +171,7 @@ The core concepts of ROS 2, micro-ROS, embedded and real-time systems are mentio
 An executable/application that runs a program/subprogram that communicate with each other via streaming topics is known as a node.
 It is used to communicate with other nodes using ROS client libraries which allow nodes to be written in different programming languages such as C, C++ and python. A robot may contain many nodes to control movement, analyse data, perform an operation like path planning, etc. 
 
-In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. ROS 2 design introduces node lifecycle, which helps to seperate real-time code path. All memory allocations are done during node initialisation.
+In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. ROS 2 design introduces the concept of node lifecycle, which helps to seperate real-time code path from the non real-time tasks. All memory allocations are done during node initialisation.
 
 
 \vspace*{0.5cm}
@@ -566,7 +566,7 @@ To connect the pressure sensor with the board (you might need the help of the bo
 \captionof{figure}[Delay Test]{Delay Test}
 \label{fig:delay}
 \end{center}
-\item To increase the data sizes of the messages, custom ROS messages were created and testing was repeated with message sizes of 8 bytes ( an integer data size is 4 bytes), 16 bytes, 32 bytes, and 64 bytes.
+\item To increase the data sizes of the messages, custom ROS messages were created and testing was repeated with message sizes of 8 bytes (an integer data size is 4 bytes), 16 bytes, 32 bytes,64 bytes and 128 bytes.
 \begin{center}
 \includegraphics[scale=0.1]{fig/olimex.jpg}
 
@@ -592,7 +592,7 @@ To connect the pressure sensor with the board (you might need the help of the bo
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
 		
-		\section{Latency Analysis in ROS 2}
+		\section{Latency Analysis of ROS 2}
 \vspace*{0.5cm}
 {\bfseries ROS 2 Crystal}
 \begin{center}
@@ -608,24 +608,54 @@ In this package, the messages are sent every 1 ms. The goal of this package was 
 {\bfseries ROS 2 Dashing}
 \vspace*{0.5cm}
 
-In this package, the messages are sent every 1 ms. In this testing, 1 MB of memory and high real-time priority is available to the node. The jitter and standard deviation keep on increasing with time. The maximum jitter value is 80 ms but the package defines the deadline as 2 ms. Although, the mean jitter value close to zero and the pendulum not falling down suggests firm real-time performance but the increasing standard deviation and high jitter values give us an impression that some improvements in the ROS 2 execution is required to make ROS 2 hard real-time. It should be kept in mind that the Linux real-time kernel does not guarantee a hard real-time system.
+In this package, the messages are sent every 1 ms. In this testing, 1 MB of memory and high real-time priority is available to the node. The jitter and standard deviation keep on increasing with time. The maximum jitter value is 80 ms but the package defines the deadline as 2 ms. Although, the mean jitter value close to zero and the pendulum not falling down suggests firm real-time performance but the increasing standard deviation and high jitter values give us an impression that some improvements in the ROS 2 execution is required to make ROS 2 hard real-time. It should also be taken into consideration that the Linux real-time kernel does not guarantee a hard real-time system.
 \begin{center}
 \includegraphics[scale=0.4]{fig/ros2dashjitter.png}
 
 \captionof{table}[ROS 2 Dashing Jitter]{ROS 2 Dashing Jitter}
 \label{tab:ros2dashjit}
 \end{center}
-		\section{Latency Analysis in micro-ROS}
+		\section{Reliabilty of micro-ROS}
 		\vspace*{0.5cm}
-		
-		Bugs
+		Some software bugs and missing features were found during the testing:
+	\begin{itemize}	
+	\item Multiple microcontrollers can not be connected to a single micro-ROS Agent/Server. This is one of the important features of micro-ROS which is missing. The issue has been reported to the developers.
+\begin{itemize}
+\item {\bfseries Case 1} : Using built-in publisher-subscriber of micro-ROS through ethernet (UDP) with one micro-ROS Agent. 
+Publisher was launched on the olimex board and subscriber was launched on the waveshare board. Both of them were communicating through the same IP address and port number. Message sending rate is really fast (1ms) in this example, subscriber code was changed to receive 500 messages and then stop. \linebreak
+{\bfseries Result} : Only one of the nodes work, either publisher or subscriber.
+
+\item {\bfseries Case 2} : Using built-in publisher-subscriber of micro-ROS through ethernet (UDP) with two micro-ROS Agents with different port numbers.\linebreak
+{\bfseries Result} : same as above
+
+\item {\bfseries Case 3} : Using bmp180 pressure sensor and same structure of publisher-subscriber code as the built-in example through ethernet(UDP), first with one micro-ROS Agent and then 2 Agents with different port number.
+Message is sent every 1 second.\linebreak
+{\bfseries Result} : Both nodes are initialised at both the boards. Subscriber receives very less data, for instance, it receives only 2 messages while the publisher publishes 15 messages in the same time, therefore it is not reliable.
+
+\item {\bfseries Case 4} : Built in publisher-subscriber with 1 Agent through ethernet (UDP) and 1 Agent through serial (UART) communication.
+Data sending rate is 1 ms.\linebreak
+{\bfseries Results} : Nodes are initialised, but many messages are not received by the subscriber, therefore it is not reliable.
+
+\item {\bfseries Case 5} : Using BMP180 pressure sensor with 1 Agent through ethernet (UDP) and 1 Agent through serial (UART) communication.
+Data is sent every 1 second. \linebreak
+{\bfseries Results} : Nodes are initialised and all values are received.
+\end{itemize}
+\item Arrays are not supported in the messages. Therefore, strings messages or array of numbers or an image can not be transported as of now. Therefore, I had to use a pressure sensor to use the standard integer message package. Also, testing of large message sizes could not take place.
+
+\end{itemize}
+\section{Latency Analysis of micro-ROS}
+\vspace*{0.5cm}
+In this testing of delay in micro-ROS communications, sometimes the subscriber got timed out and killed the node which hampered testing. Later, it was confirmed with the developers that this is also a bug in the software. Due to this issue, multiple publishers and subscribers present in a single node could not be tested. Also the latencies using the UART serial communication were 15-20 ms more than the latencies using ethernet (UDP) communication because of the lag caused by the driver in the USB to UART converter. Therefore further testing was only done using ethernet. We have some promising results :
+\begin{itemize}
+\item Below, you can see the latencies in nanoseconds for 500 observations for a message size of 8 bytes. The least count of the board's clock was 10 ms.
+
 \begin{center}
 \includegraphics[scale=0.3]{fig/uros8byteles.png}
-
-\captionof{figure}[Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 ms)]{Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 ms)}
+\captionof{figure}[Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 ms)]{Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 ms)}
 \label{fig:uros8byteles}
 \end{center}
 
+\item Below, you can see the latencies in nanoseconds for 500 observations for a message size of 8 bytes. The least count of the board's clock was changed to 10 us for better precision. This is followed by the observations of the delay test with message size of 16 bytes, 32 bytes, 64 bytes and 128 bytes.
 \nomenclature{MB}{Megabyte}
 \nomenclature{ns}{Nanoseconds}
 \nomenclature{ms}{Milliseconds}
@@ -633,7 +663,7 @@ In this package, the messages are sent every 1 ms. In this testing, 1 MB of memo
 \begin{center}
 \includegraphics[scale=0.32]{fig/uros8byte.png}
 
-\captionof{figure}[Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 8 bytes (Least count- 10 us)}
+\captionof{figure}[Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 us)]{Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 us)}
 \label{fig:uros8byte}
 \end{center}
 
@@ -641,32 +671,74 @@ In this package, the messages are sent every 1 ms. In this testing, 1 MB of memo
 \begin{center}
 \includegraphics[scale=0.32]{fig/uros16byte.png}
 
-\captionof{figure}[Micro-ROS Latencies for Data Size of 16 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 16 bytes (Least count- 10 us)}
+\captionof{figure}[Micro-ROS Latencies for Data Size of 16 bytes (Least count-10 us)]{Micro-ROS Latencies for Data Size of 16 bytes (Least count-10 us)}
 \label{fig:uros16byte}
 \end{center}
 
 \begin{center}
 \includegraphics[scale=0.32]{fig/uros32byte.png}
 
-\captionof{figure}[Micro-ROS Latencies for Data Size of 32 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 32 bytes (Least count- 10 us)}
+\captionof{figure}[Micro-ROS Latencies for Data Size of 32 bytes (Least count-10 us)]{Micro-ROS Latencies for Data Size of 32 bytes (Least count-10 us)}
 \label{fig:uros32byte}
 \end{center}
 
 \begin{center}
 \includegraphics[scale=0.32]{fig/uros64byte.png}
 
-\captionof{figure}[Micro-ROS Latencies for Data Size of 64 bytes (Least count- 10 us)]{Micro-ROS Latencies for Data Size of 64 bytes (Least count- 10 us)}
+\captionof{figure}[Micro-ROS Latencies for Data Size of 64 bytes (Least count-10 us)]{Micro-ROS Latencies for Data Size of 64 bytes (Least count-10 us)}
 \label{fig:uros64byte}
 \end{center}
 
-		\section{Discussion}
-		\vspace*{0.5cm}
-	Since, the packages and ways of testing for ROS 2 Crystal, ROS 2 Dashing and micro-ROS (ROS 2 Crystal) are different. The results should not be compared between them. However, we can still determine some common aspects of the their results.
-	ROS 2 Dashing pendulum demo provides more accurate results and also offers a continuous simulation.  
-		\chapter{Conclusion and Future Scope}
+\begin{center}
+\includegraphics[scale=0.32]{fig/uros128byte.png}
+
+\captionof{figure}[Micro-ROS Latencies for Data Size of 128 bytes (Least count-10 us)]{Micro-ROS Latencies for Data Size of 128 bytes (Least count-10 us)}
+\label{fig:uros128byte}
+\end{center}
+\end{itemize}
+{\bfseries Analysis}
+
+
+\vspace*{0.5cm}
+From the line graphs, we can see the deterministic performance of the micro-ROS LET Executor. Let us define an acceptable jitter value of 1 ms. A large number of latency spikes outside the range of acceptable jitter were observed. Below, in the table we can find the summary of observations. We can see low mean jitter values which suggests good real-time performance with a RTOS. Also, we can observe that the number of observations with excessive jitter increase with the message size.
+\begin{center}
+\includegraphics[scale=0.4]{fig/urosfinaldata.png}
+
+\captionof{table}[Micro-ROS Results]{Micro-ROS Results}
+\label{tab:urosfinaldata}
+\end{center}
+		
+		\section{Discussion and Comparison}
+		\vspace*{0.25cm}
+	Since, the packages and ways of testing for ROS 2 Crystal, ROS 2 Dashing and micro-ROS (ROS 2 Crystal) are different. The results should not be compared between them. However, we can still determine some common aspects of their results.
+	
+	ROS 2 Crytal pendulum demo is a broken simulation and does not show good real-time performance. The mean latencies values are low but the large standard deviation and maximum latencies are not good for a real-time system. Also, there is loss of data which increases when stress is applied. This package does not exactly help in testing real-time capabilities.
+	\vspace*{0.25cm}
+	
+	ROS 2 Dashing pendulum demo provides more accurate results and also offers a continuous visual simulation in RViz. Mean jitter values are very low but they keep on icreasing with time. Also the high maximum jitter and standard deviation values suggests there is some improvement needed to make the execution more deterministic. It also gives us an impression that with some fine-tuning and improvements in the ROS 2 Standard Executor, the software can be configured for a soft or firm real-time system. Development of real-time systems with the standard ROS 2 stack and Linux environment requires a lot of research work and ROS 2 package development at this moment. However, with a RTOS and proper real-time code structure, ROS 2 can offer better real-time performance. Real-time applications with the standard ROS 2 stack can not be seen in the ROS 2 Community, but the main issues related to real-time performance have been identified and the community is working along with ROS 2 developers to improve the real-time performance of ROS 2.
+	
+	\vspace*{0.25cm}
+	There is also an alternative to the standard ROS 2, which is micro-ROS specifically targeting embedded board and real-time applications. However, extensive development of micro-ROS is required to provide a reliable software without bugs and missing features. The C++ Executor is still a challenge as many applications in the robotic world use C++. The testing of this software was partially successful. We observed the deterministic behavior of the LET Executor and low mean jitter values. But we also observed high maximum jitter values. Even though, micro-ROS runs on a RTOS, the Agent still requires a Linux environment which is not real-time safe. The Agent is a core element of the communication structure and running it on a non RTOS will have a negative impact on the real-time performance of micro-ROS. Also, multiple number of publishers and subscribers could not be launched due to a software bug and stress could not be applied to the microprocessor.
+		\chapter{Conclusion}
 			
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
+Our investigations in the real-time performance of the standard ROS 2 stack suggest that it is a good software for automotive applications and gives promising initial results but still requires improvements and further development in some of its packages to make it suitable for a real-time system, especially hard real-time applications. We also need to use a RTOS and configure it to be real-time safe. Currently, it only seems suitable for soft real-time systems. Also, the underlying DDS middleware can be fine-tuned for better real-time performance, but this needs to be further investigated. Based on the ROS community discussions, the issues with the software have been identified and we might see some special features related to real-time systems in the upcoming versions of ROS 2. The inverted pendulum demo can be used as a standard platform to test the upcoming versions.
+
+\vspace*{0.5cm}
+micro-ROS offers deterministic behavior and seems more suitable than the standard ROS 2 stack for a real-time system. But, it requires extensive and fast development to offer its users a real-time safe and reliable software. Still the limitations of this software remain to be tested as there are a lot of bugs and their development needs to integrate with the standard ROS 2 stack. Also, the micro-ROS Agent dependency needs to be eliminated because it runs on an environment which is not real-time safe.
+
+
+\section{Future Scope}
+\vspace*{0.5cm}
+\begin{itemize}
+\item Future versions of ROS 2 can be tested with the inverted pendulum demo and the results can be compared with that of Dashing.
+\item Research on configuration and fine tuning of DDS by different vendors for better real-time performance. 
+\item Testing of inverted pendulum demo with micro-ROS and RTOS when the C++ Executor becomes available.
+\item Real-time testing of image messages using a camera sensor and micro-ROS as image processing is of interest for the development of automated driving.
+\item Develop a physical hardware setup of an inverted pendulum for testing with micro-ROS.
+\item Compare ROS 2 with other softwares in the same testing environment. For example, the Driverless Formula Student Racing Team at the Ravensburg Weingarten University can compare the performance of softwares with brake distance or lap time.
+\end{itemize}
 		\addcontentsline{toc}{chapter}{List of Figures}
 	\listoffigures
 	\addcontentsline{toc}{chapter}{List of Tables}

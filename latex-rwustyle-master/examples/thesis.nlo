@@ -18,7 +18,7 @@
 \nomenclatureentry{aI2C@[{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}|nompageref}{17}
 \nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Computer Vision\nomeqref {\relax 3.0}|nompageref}{20}
 \nomenclatureentry{akB@[{kB}]\begingroup Kilobyte\nomeqref {\relax 4.0}|nompageref}{26}
-\nomenclatureentry{aMB@[{MB}]\begingroup Megabyte\nomeqref {\relax 5.0}|nompageref}{32}
-\nomenclatureentry{ans@[{ns}]\begingroup Nanoseconds\nomeqref {\relax 5.0}|nompageref}{32}
-\nomenclatureentry{ams@[{ms}]\begingroup Milliseconds\nomeqref {\relax 5.0}|nompageref}{32}
-\nomenclatureentry{aus@[{us}]\begingroup Microseconds\nomeqref {\relax 5.0}|nompageref}{32}
+\nomenclatureentry{aMB@[{MB}]\begingroup Megabyte\nomeqref {\relax 5.0}|nompageref}{33}
+\nomenclatureentry{ans@[{ns}]\begingroup Nanoseconds\nomeqref {\relax 5.0}|nompageref}{33}
+\nomenclatureentry{ams@[{ms}]\begingroup Milliseconds\nomeqref {\relax 5.0}|nompageref}{33}
+\nomenclatureentry{aus@[{us}]\begingroup Microseconds\nomeqref {\relax 5.0}|nompageref}{33}
