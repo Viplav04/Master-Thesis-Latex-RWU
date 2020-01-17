@@ -171,7 +171,7 @@ The core concepts of ROS 2, micro-ROS, embedded and real-time systems are mentio
 An executable/application that runs a program/subprogram that communicate with each other via streaming topics is known as a node.
 It is used to communicate with other nodes using ROS client libraries which allow nodes to be written in different programming languages such as C, C++ and python. A robot may contain many nodes to control movement, analyse data, perform an operation like path planning, etc. 
 
-In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. ROS 2 design introduces the concept of node lifecycle, which helps to seperate real-time code path from the non real-time tasks. All memory allocations are done during node initialisation.
+In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. ROS 2 design introduces the concept of node lifecycle, which helps to seperate real-time code path from the non real-time tasks. All memory allocations are done during node initialization.
 
 
 \vspace*{0.5cm}
@@ -352,7 +352,7 @@ Following are the communication protocols used in testing of micro-ROS:
 	
 	
 	\vspace*{0.5cm}	
-Real-time systems should produce reproducable and correct computations at the correct time and be predictable even in a worst case scenario. Failure to respond within a set desired time(deadline) can cause damage to life or other resources. These systems have to be designed according to the dynamics of the physical process. They are often part of an embedded system and are employed in airplane sytems, automotive systems, satellites, power stations, and other critical applications. These systems are usually resource-constrained and still should offer low latencies. Jitter is the variation in the periodic loop time.
+Real-time systems should produce reproducible and correct computations at the correct time and be predictable even in worst-case scenario. Failure to respond within a set desired time(deadline) can cause damage to life or other resources. These systems have to be designed according to the dynamics of the physical process. They are often part of an embedded system and are employed in airplane systems, automotive systems, satellites, power stations, and other critical applications. These systems are usually resource-constrained and still should offer low latencies. Jitter is the variation in the periodic loop time.
 	
 	\begin{center}
 \includegraphics[scale=0.4]{fig/deadline.jpg}
@@ -370,7 +370,7 @@ Real-time systems should produce reproducable and correct computations at the co
 	\section{Research by ROS Community}
 \vspace*{0.5cm}
 \begin{itemize}
-\item {\bfseries Inverted Pendulum demo} - The unstable arrangement of an inverted-pendulum is used as a means to test  the real-time performance of ROS 2. A simulation is performed with ROS 2 where, the pendulum is balanced by a motor and a moving cart at the base. The motor command and sensor feedback are configured as ROS 2 messages and these are updated with a loop time of 1 msec. Linux preemtible kernel is used which offers real-time capability. High scheduling priority is given to the node and memory allocations are done during initialisation of the node. Dynamic memory allocations are blocked as they are not real-time safe. J. Kay and A.R. Tsouroukdissian have implemented this package with ROS 2 Alpha release. They also mention that DDS can be fine tuned for better real-time performance. Their goal was to get less than 3\%(30 microsecs) jitter. Without any stress to the system, the maximum jitter was 3.51\% , minimum was 0.16\%, and mean was 0.46\% but with stress on the processor, the maximum jitter was 25.8\% , minimum was 0.14\%, and mean was 0.38\%. Also, 3 instances of overrun(loop time out of acceptable jitter range) were observed.
+\item {\bfseries Inverted Pendulum demo} - The unstable arrangement of an inverted-pendulum is used as a means to test  the real-time performance of ROS 2. A simulation is performed with ROS 2 where the pendulum is balanced by a motor and a moving cart at the base. The motor command and sensor feedback are configured as ROS 2 messages and these are updated with a loop time of 1 ms. Linux preemptible kernel is used which offers real-time capability. High scheduling priority is given to the node and memory allocations are done during initialization of the node. Dynamic memory allocations are blocked as they are not real-time safe. J. Kay and A.R. Tsouroukdissian have implemented this package with ROS 2 Alpha release. They also mention that DDS can be fine-tuned for better real-time performance. Their goal was to get less than 3\%(30 ms) jitter. Without any stress to the system, the maximum jitter was 3.51\% , minimum was 0.16\%, and mean was 0.46\% but with stress on the processor, the maximum jitter was 25.8\% , minimum was 0.14\%, and mean was 0.38\%. Also, 3 instances of overrun(loop time out of acceptable jitter range) were observed.
 	\begin{center}
 \includegraphics[scale=0.5]{fig/inverted.jpg}
 
@@ -383,7 +383,7 @@ Real-time systems should produce reproducable and correct computations at the co
 \item Non-preemptive round-robin scheduling of non-timer handles/entities(subscriptions, services,clients) leads to priority inversion, lower priority callbacks may block higher priority callbacks leading to high processing time. Also, this problem is further aggravated as only one message per handle is considered, even when multiple messages of the same topic are available, only one instance is processed by the Executor which causes backlog and hence, priority inversion. 
 \end{itemize} 
 These shortcomings led to the development of the LET Executor in micro-ROS to allow for deterministic execution.
-\item {\bfseries High CPU Overhead by ROS 2 Executor} - In a study by Nobleo Technology (see \cite{nobleo}), it has been concluded that the ROS 2 SingleThreadedExecutor uses a lot of CPU power and generates overhead (unnecessary computation, memory allocations, etc.). ROS 2 Executor needs to be optimised otherwise normal ROS 2 cannot function properly on ARM A-class embedded boards. Based on the discussions between the ROS developers and the community, the Executor is undergoing some design changes to improve its performance. Some changes are planned for the next ROS 2 release Foxy due in May, 2020.
+\item {\bfseries High CPU Overhead by ROS 2 Executor} - In a study by Nobleo Technology (see \cite{nobleo}), it has been concluded that the ROS 2 SingleThreadedExecutor uses a lot of CPU power and generates overhead (unnecessary computation, memory allocations, etc.). ROS 2 Executor needs to be optimized otherwise normal ROS 2 cannot function properly on ARM A-class embedded boards. Based on the discussions between the ROS developers and the community, the Executor is undergoing some design changes to improve its performance. Some changes are planned for the next ROS 2 release, Foxy due in May 2020.
 \end{itemize}
 
 
@@ -391,7 +391,7 @@ These shortcomings led to the development of the LET Executor in micro-ROS to al
 		
 \rofoot[\pagemark]{\pagemark}
 \refoot[\pagemark]{\pagemark}
-This is an open source project using License Apache 2.0 to understand simple ADAS applications using ROS 2 Crystal and Gazebo Simulator. You can drive around the robot in the simulator and have Lane Detection and Auto Brake when object is detected. To run this simulator, please refer to the instructions given in my Github repository, see link - \href{https://github.com/Viplav04/ADAS-ROS2-Gazebo-Simulator}{ADAS Simulator using ROS 2 and Gazebo}\cite{ADASsim}
+This is an open-source project using License Apache 2.0 to understand simple ADAS applications using ROS 2 Crystal and Gazebo Simulator. You can drive around the robot in the simulator and have Lane Detection and Auto Brake when an object is detected. To run this simulator, please refer to the instructions given in my Github repository, see link - \href{https://github.com/Viplav04/ADAS-ROS2-Gazebo-Simulator}{ADAS Simulator using ROS 2 and Gazebo}\cite{ADASsim}
 	\begin{center}
 \includegraphics[scale=0.26]{fig/ros2adas.png}
 \captionof{figure}[ADAS Simulator using ROS 2 and Gazebo]{ADAS Simulator using ROS 2 and Gazebo}
@@ -424,7 +424,7 @@ Firstly, a world file is created in the Gazebo Simulator to add roads and humans
 \captionof{figure}[Line Detection using Hough Transform]{Line Detection using Hough Transform}
 \label{fig:hough}
 \end{center}
-\item The lines detected are further optimised and a box is drawn connecting the two lines to display the lane. Also. turning advice to stay in the lane is printed onto the image calculating the direction in which the robot is heading.
+\item The lines detected are further optimized and a box is drawn connecting the two lines to display the lane. Also, turning advice to stay in the lane is printed onto the image calculating the direction in which the robot is heading.
 \begin{center}
 \includegraphics[scale=0.3]{fig/finaladas.png}
 \captionof{figure}[Lane Detection]{Lane Detection}
@@ -434,7 +434,7 @@ Firstly, a world file is created in the Gazebo Simulator to add roads and humans
 		
 				\section{Driver Control using Keyboard}	
 	\vspace*{0.5cm}
-The robot has 3 wheels and a differntial drive to enable turning. ROS 2 offers a built-in teleop\textunderscore twist\textunderscore keyboard package to send messages to the robot from the keyboard. The messages are already available in ROS 2 known as Twist messages. The differential drive plugin with Gazebo simulator can be enabled by modifying the robot model file in Gazebo. 	
+The robot has 3 wheels and a differential drive to enable turning. ROS 2 offers a built-in teleop\textunderscore twist\textunderscore keyboard package to send messages to the robot from the keyboard. The messages are already available in ROS 2 known as Twist messages. The differential drive plugin with Gazebo simulator can be enabled by modifying the robot model file in Gazebo. 	
 
 		\section{Auto Stop using LIDAR}
 		\vspace*{0.5cm}
@@ -443,7 +443,7 @@ The laser sensor data gives out the minimum range of any object in its field. Ra
 			\begin{center}
 \includegraphics[scale=0.3]{fig/laser.png}
 \includegraphics[scale=0.17]{fig/laser2.png}
-\captionof{figure}[Laser and Camera Data Visualisation]{Laser and Camera Data Visualisation}
+\captionof{figure}[Laser and Camera Data Visualization]{Laser and Camera Data Visualization}
 \label{fig:laser}
 \end{center}
 			\begin{center}
@@ -451,7 +451,7 @@ The laser sensor data gives out the minimum range of any object in its field. Ra
 \captionof{figure}[Auto Stop Feature]{Auto Stop Feature}
 \label{fig:lane1}
 \end{center}
-This project helps us to understand ROS 2 concepts and also explore its versatile libraries. Along with the Gazebo simulator, different kinds of robot applications can be tested and simulated in the worst case scenarios. 
+This project helps us to understand ROS 2 concepts and also explore its versatile libraries. Along with the Gazebo simulator, different kinds of robot applications can be tested and simulated in worst-case scenarios. 
 
 Different types of data can be accessed in a single node with multiple publishers or subscribers. Also, nodes can interact and discover themselves automatically, the user just has to source the ROS 2 software and launch the created nodes in different terminals in Linux.
 	\chapter{Test Setup}
@@ -481,7 +481,7 @@ The testing of ROS 2 is based on the inverted pendulum demo. The demo is differe
 \vspace*{0.5cm}
 {\bfseries To set real-time settings in Linux kernel} :
 \begin{itemize}
-\item Ubuntu 18.04 has SecureBoot security feature. It only allows signed kernels to be installed. Therefore, the real-time kernel after installation has to be signed. To do this, see \href{https://askubuntu.com/questions/1081472/vmlinuz-4-18-12-041812-generic-has-invalid-signature}{Signing a kernel}.
+\item Ubuntu 18.04 has SecureBoot security feature. It only allows signed kernels to be installed. Therefore, the real-time kernel after installation has to be signed. To do this, see \href{https://askubuntu.com/questions/1081472/vmlinuz-4-18-12-041812-generic-has-invalid-signature}{Signing a kernel}.\cite{dualboot}
 \item To set memory locking and high real-time scheduling priority, the following lines are added to the file /etc/security/limits.conf :
 \begin{itemize}
 \item "<user>  - memlock limit-in-kilobytes(kB)" (-1 for unlimited, we use 1000 kB\nomenclature{kB}{Kilobyte})
@@ -494,7 +494,7 @@ The testing of ROS 2 is based on the inverted pendulum demo. The demo is differe
 \begin{itemize}
 \item The ROS 2 Crystal setup.bash file is sourced in a terminal and "pendulum\textunderscore demo>output.txt" command is launched as root user. The node writes the output to the text file.
 \item This node sends a 1000 messages for both the motor controller and feedback sensor with an update rate of 1 msec. The process was repeated 5 times and the average values were calculated.
-\item Then in another terminal, "stress --cpu 100" command was launched and also many applications were launched in the computer to put stress on the CPU and memory. Then again the pendulum demo was launched 5 times and observations were recorded.
+\item Then in another terminal "stress --cpu 100" command was launched and also many applications were launched in the computer to put stress on the CPU and memory. Then again the pendulum demo was launched 5 times and observations were recorded.
 \end{itemize}
 {\bfseries For ROS 2 Dashing} :
 \begin{itemize}
@@ -530,7 +530,7 @@ This testing has been done with micro-ROS Crystal version. Dashing version is st
 	This cannot be explained in brief, but the user can refer to these videos - \href{https://www.youtube.com/channel/UC0QciIlcUnjJkL5yJJBmluw/videos}{Nuttx Channel}\cite{Nuttxchannel}. 
 	
 	You can also find my configuration file at this link - \href{https://github.com/Viplav04/NuttX/tree/master/configs/olimex-stm32-e407/uros}{micro-ROS Configuration File}\cite{olimexconfigfile}.
-	\item After configuring Nuttx, the firware needs to be flashed onto the board. Connect the olimex board to the JTAG debugger and micro-USB cable to access the board's operating system (console). 
+	\item After configuring Nuttx, the firmware needs to be flashed onto the board. Connect the olimex board to the JTAG debugger and micro-USB cable to access the board's operating system (console). 
 	
 				\begin{center}
 \includegraphics[scale=0.2]{fig/olimexnshusb.jpg}
@@ -566,7 +566,7 @@ To connect the pressure sensor with the board (you might need the help of the bo
 \captionof{figure}[Delay Test]{Delay Test}
 \label{fig:delay}
 \end{center}
-\item To increase the data sizes of the messages, custom ROS messages were created and testing was repeated with message sizes of 8 bytes (an integer data size is 4 bytes), 16 bytes, 32 bytes,64 bytes and 128 bytes.
+\item To increase the data sizes of the message, custom ROS messages were created and testing was repeated with message sizes of 8 bytes (an integer data size is 4 bytes), 16 bytes, 32 bytes,64 bytes, and 128 bytes.
 \begin{center}
 \includegraphics[scale=0.1]{fig/olimex.jpg}
 
@@ -579,7 +579,7 @@ To connect the pressure sensor with the board (you might need the help of the bo
 \item Green wire to RX port.
 \item White wire to TX port.
 \end{itemize}
-\item Launch the micro-ROS Agent in another terminal in Linux. First source the ROS 2 crystal environment, then source the micro-ROS environment. Then go to the micro-ROS agent package in the install directory and launch micro-ROS agent with commands "./micro\textunderscore ros\textunderscore agent udp 8888" for IP connection and "./micro\textunderscore ros\textunderscore agent serial <USB port number for PL2303 driver>". Then launch the delay\textunderscore test application in Nuttx. delay\textunderscore test was done 50*10 times using a loop and all data was recorded
+\item Launch the micro-ROS Agent in another terminal in Linux. First source the ROS 2 crystal environment, then source the micro-ROS environment. Then go to the micro-ROS agent package in the install directory and launch micro-ROS agent with commands "./micro\textunderscore ros\textunderscore agent udp 8888" for IP connection and "./micro\textunderscore ros\textunderscore agent serial <USB port number for PL2303 driver>". Then launch the delay\textunderscore test application in Nuttx. delay\textunderscore test was done 50*10 times using a loop and all data was recorded.
 \end{enumerate}
 \begin{center}
 \includegraphics[scale=0.15,angle=180]{fig/waveshare.jpg}
@@ -601,28 +601,28 @@ To connect the pressure sensor with the board (you might need the help of the bo
 \captionof{table}[ROS 2 Crystal Latency]{ROS 2 Crystal Latency}
 \label{tab:ros2crystallatency}
 \end{center}
-In this package, the messages are sent every 1 ms. The goal of this package was to receive 1000 messages with maximum 3\% jitter(30 us). In this testing, 1 MB of memory and high real-time priority is available to the node. The package is not reliable as we can see we lose messages. Even though we have low latency values, still we can see the mean latency over 1 ms in 2 observations which is greater than the update rate. The maximum latency is 44.5 ms. We also see very high standard deviation values which suggests the software is not deterministic even without any stress on the CPU. The maximum jitter value is 33 ms which is way beyond the desired.
+In this package, the messages are sent every 1 ms. The goal of this package was to receive 1000 messages with maximum 3\% jitter(30 us). In this testing, 1 MB of memory and high real-time priority was available to the node. The package is not reliable as we can see we lose messages. Even though we have low latency values, still we can see the mean latency over 1 ms in 2 observations which is greater than the update rate. The maximum latency is 44.5 ms. We also see very high standard deviation values which suggests the software is not deterministic even without any stress on the CPU. The maximum jitter value is 33 ms which is way beyond the desired.
 \vspace*{0.5cm}
 
 
 {\bfseries ROS 2 Dashing}
 \vspace*{0.5cm}
 
-In this package, the messages are sent every 1 ms. In this testing, 1 MB of memory and high real-time priority is available to the node. The jitter and standard deviation keep on increasing with time. The maximum jitter value is 80 ms but the package defines the deadline as 2 ms. Although, the mean jitter value close to zero and the pendulum not falling down suggests firm real-time performance but the increasing standard deviation and high jitter values give us an impression that some improvements in the ROS 2 execution is required to make ROS 2 hard real-time. It should also be taken into consideration that the Linux real-time kernel does not guarantee a hard real-time system.
+In this package, the messages are sent every 1 ms. In this testing, 1 MB of memory and high real-time priority is available to the node. The jitter and standard deviation keep on increasing with time. The maximum jitter value is 80 ms but the package defines the deadline as 2 ms. Although, the mean jitter values close to zero and the pendulum not falling down suggests good real-time performance but the increasing standard deviation and high jitter values give us an impression that some improvements in the ROS 2 execution is required to make ROS 2 suitable for real-time systems. It should also be taken into consideration that the Linux real-time kernel does not guarantee a hard real-time system.
 \begin{center}
 \includegraphics[scale=0.4]{fig/ros2dashjitter.png}
 
 \captionof{table}[ROS 2 Dashing Jitter]{ROS 2 Dashing Jitter}
 \label{tab:ros2dashjit}
 \end{center}
-		\section{Reliabilty of micro-ROS}
+		\section{Reliability of micro-ROS}
 		\vspace*{0.5cm}
 		Some software bugs and missing features were found during the testing:
 	\begin{itemize}	
 	\item Multiple microcontrollers can not be connected to a single micro-ROS Agent/Server. This is one of the important features of micro-ROS which is missing. The issue has been reported to the developers.
 \begin{itemize}
 \item {\bfseries Case 1} : Using built-in publisher-subscriber of micro-ROS through ethernet (UDP) with one micro-ROS Agent. 
-Publisher was launched on the olimex board and subscriber was launched on the waveshare board. Both of them were communicating through the same IP address and port number. Message sending rate is really fast (1ms) in this example, subscriber code was changed to receive 500 messages and then stop. \linebreak
+Publisher was launched on the olimex board and subscriber was launched on the waveshare board. Both of them were communicating through the same IP address and port number. Message sending rate is really fast (1 ms) in this example, subscriber code was changed to receive 500 messages and then stop. \linebreak
 {\bfseries Result} : Only one of the nodes work, either publisher or subscriber.
 
 \item {\bfseries Case 2} : Using built-in publisher-subscriber of micro-ROS through ethernet (UDP) with two micro-ROS Agents with different port numbers.\linebreak
@@ -640,7 +640,7 @@ Data sending rate is 1 ms.\linebreak
 Data is sent every 1 second. \linebreak
 {\bfseries Results} : Nodes are initialised and all values are received.
 \end{itemize}
-\item Arrays are not supported in the messages. Therefore, strings messages or array of numbers or an image can not be transported as of now. Therefore, I had to use a pressure sensor to use the standard integer message package. Also, testing of large message sizes could not take place.
+\item Arrays are not supported in the messages. Therefore, string messages or array of numbers or an image can not be transported as of now. Therefore, I had to use a pressure sensor to use the standard integer message package. Also, testing of large message sizes could not take place.
 
 \end{itemize}
 \section{Latency Analysis of micro-ROS}
@@ -655,7 +655,7 @@ In this testing of delay in micro-ROS communications, sometimes the subscriber g
 \label{fig:uros8byteles}
 \end{center}
 
-\item Below, you can see the latencies in nanoseconds for 500 observations for a message size of 8 bytes. The least count of the board's clock was changed to 10 us for better precision. This is followed by the observations of the delay test with message size of 16 bytes, 32 bytes, 64 bytes and 128 bytes.
+\item Below, you can see the latencies in nanoseconds for 500 observations for a message size of 8 bytes. The least count of the board's clock was changed to 10 us for better precision. This is followed by the observations of the delay test with message sizes of 16 bytes, 32 bytes, 64 bytes, and 128 bytes.
 \nomenclature{MB}{Megabyte}
 \nomenclature{ns}{Nanoseconds}
 \nomenclature{ms}{Milliseconds}
@@ -700,7 +700,7 @@ In this testing of delay in micro-ROS communications, sometimes the subscriber g
 
 
 \vspace*{0.5cm}
-From the line graphs, we can see the deterministic performance of the micro-ROS LET Executor. Let us define an acceptable jitter value of 1 ms. A large number of latency spikes outside the range of acceptable jitter were observed. Below, in the table we can find the summary of observations. We can see low mean jitter values which suggests good real-time performance with a RTOS. Also, we can observe that the number of observations with excessive jitter increase with the message size.
+From the line graphs, we can see the deterministic performance of the micro-ROS LET Executor. Let us define an acceptable jitter value of 1 ms. Many latency spikes outside the range of acceptable jitter were observed. Below, in the table we can find the summary of observations. We can see low mean jitter values which suggests good real-time performance with a RTOS. Also, we can observe that the number of observations with excessive jitter increase with the message size.
 \begin{center}
 \includegraphics[scale=0.4]{fig/urosfinaldata.png}
 
@@ -712,13 +712,13 @@ From the line graphs, we can see the deterministic performance of the micro-ROS 
 		\vspace*{0.25cm}
 	Since, the packages and ways of testing for ROS 2 Crystal, ROS 2 Dashing and micro-ROS (ROS 2 Crystal) are different. The results should not be compared between them. However, we can still determine some common aspects of their results.
 	
-	ROS 2 Crytal pendulum demo is a broken simulation and does not show good real-time performance. The mean latencies values are low but the large standard deviation and maximum latencies are not good for a real-time system. Also, there is loss of data which increases when stress is applied. This package does not exactly help in testing real-time capabilities.
+	ROS 2 Crytal pendulum demo is a broken simulation and does not show good real-time performance. The mean latency values are low but the large standard deviation and maximum latencies are not good for a real-time system. Also, there is a loss of data which increases when stress is applied. This package does not exactly help in testing real-time capabilities.
 	\vspace*{0.25cm}
 	
-	ROS 2 Dashing pendulum demo provides more accurate results and also offers a continuous visual simulation in RViz. Mean jitter values are very low but they keep on icreasing with time. Also the high maximum jitter and standard deviation values suggests there is some improvement needed to make the execution more deterministic. It also gives us an impression that with some fine-tuning and improvements in the ROS 2 Standard Executor, the software can be configured for a soft or firm real-time system. Development of real-time systems with the standard ROS 2 stack and Linux environment requires a lot of research work and ROS 2 package development at this moment. However, with a RTOS and proper real-time code structure, ROS 2 can offer better real-time performance. Real-time applications with the standard ROS 2 stack can not be seen in the ROS 2 Community, but the main issues related to real-time performance have been identified and the community is working along with ROS 2 developers to improve the real-time performance of ROS 2.
+	ROS 2 Dashing pendulum demo provides more accurate results and also offers a continuous visual simulation in RViz. Mean jitter values are very low but they keep on increasing with time. Also, the high maximum jitter and standard deviation values suggest that there is some improvement needed to make the execution more deterministic. It also gives us an impression that with some fine-tuning and improvements in the ROS 2 Standard Executor, the software can be configured for a soft or firm real-time system. The development of real-time systems with the standard ROS 2 stack and Linux environment requires a lot of research work and ROS 2 package development at this moment. However, with a RTOS and proper real-time code structure, ROS 2 can offer better real-time performance. Real-time applications with the standard ROS 2 stack can not be seen in the ROS 2 Community, but the main issues related to real-time performance have been identified and the community is working along with ROS 2 developers to improve the real-time performance of ROS 2.
 	
 	\vspace*{0.25cm}
-	There is also an alternative to the standard ROS 2, which is micro-ROS specifically targeting embedded board and real-time applications. However, extensive development of micro-ROS is required to provide a reliable software without bugs and missing features. The C++ Executor is still a challenge as many applications in the robotic world use C++. The testing of this software was partially successful. We observed the deterministic behavior of the LET Executor and low mean jitter values. But we also observed high maximum jitter values. Even though, micro-ROS runs on a RTOS, the Agent still requires a Linux environment which is not real-time safe. The Agent is a core element of the communication structure and running it on a non RTOS will have a negative impact on the real-time performance of micro-ROS. Also, multiple number of publishers and subscribers could not be launched due to a software bug and stress could not be applied to the microprocessor.
+	There is also an alternative to the standard ROS 2, which is micro-ROS specifically targeting embedded board and real-time applications. However, extensive development of micro-ROS is required to provide reliable software without bugs and missing features. The C++ Executor is still a challenge as many applications in the robotic world use C++. The testing of this software was partially successful. We observed the deterministic behavior of the LET Executor and low mean jitter values. But we also observed high maximum jitter values. Even though micro-ROS runs on a RTOS, the Agent still requires a Linux environment which is not real-time safe. The Agent is a core element of the communication structure and running it on a non RTOS will have a negative impact on the real-time performance of micro-ROS. Also, multiple numbers of publishers and subscribers could not be launched due to a software bug and stress could not be applied to the microprocessor.
 		\chapter{Conclusion}
 			
 \rofoot[\pagemark]{\pagemark}
@@ -726,18 +726,18 @@ From the line graphs, we can see the deterministic performance of the micro-ROS 
 Our investigations in the real-time performance of the standard ROS 2 stack suggest that it is a good software for automotive applications and gives promising initial results but still requires improvements and further development in some of its packages to make it suitable for a real-time system, especially hard real-time applications. We also need to use a RTOS and configure it to be real-time safe. Currently, it only seems suitable for soft real-time systems. Also, the underlying DDS middleware can be fine-tuned for better real-time performance, but this needs to be further investigated. Based on the ROS community discussions, the issues with the software have been identified and we might see some special features related to real-time systems in the upcoming versions of ROS 2. The inverted pendulum demo can be used as a standard platform to test the upcoming versions.
 
 \vspace*{0.5cm}
-micro-ROS offers deterministic behavior and seems more suitable than the standard ROS 2 stack for a real-time system. But, it requires extensive and fast development to offer its users a real-time safe and reliable software. Still the limitations of this software remain to be tested as there are a lot of bugs and their development needs to integrate with the standard ROS 2 stack. Also, the micro-ROS Agent dependency needs to be eliminated because it runs on an environment which is not real-time safe.
+micro-ROS offers deterministic behavior and seems more suitable than the standard ROS 2 stack for a real-time system. But, it requires extensive and fast development to offer its users a real-time safe and reliable software. Still, the limitations of this software remain to be tested as there are a lot of bugs and their development needs to integrate with the standard ROS 2 stack. Also, the micro-ROS Agent dependency needs to be eliminated because it runs on an environment which is not real-time safe.
 
 
 \section{Future Scope}
 \vspace*{0.5cm}
 \begin{itemize}
 \item Future versions of ROS 2 can be tested with the inverted pendulum demo and the results can be compared with that of Dashing.
-\item Research on configuration and fine tuning of DDS by different vendors for better real-time performance. 
+\item Research on configuration and fine-tuning of DDS by different vendors for better real-time performance. 
 \item Testing of inverted pendulum demo with micro-ROS and RTOS when the C++ Executor becomes available.
 \item Real-time testing of image messages using a camera sensor and micro-ROS as image processing is of interest for the development of automated driving.
 \item Develop a physical hardware setup of an inverted pendulum for testing with micro-ROS.
-\item Compare ROS 2 with other softwares in the same testing environment. For example, the Driverless Formula Student Racing Team at the Ravensburg Weingarten University can compare the performance of softwares with brake distance or lap time.
+\item Compare ROS 2 with other software in the same testing environment. For example, the Driverless Formula Student Racing Team at the Ravensburg Weingarten University can compare the performance of software with brake distance or lap time.
 \end{itemize}
 		\addcontentsline{toc}{chapter}{List of Figures}
 	\listoffigures

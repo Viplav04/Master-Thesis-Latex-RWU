@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  16 JAN 2020 15:53
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.28)  17 JAN 2020 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,9 +1116,9 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 437--438
-\TU/BarlowSemiCondensed(0)/m/n/12 The robot has 3 wheels and a differntial driv
-e to enable turning. ROS 2 offers a built-in
+Underfull \hbox (badness 2035) in paragraph at lines 437--438
+\TU/BarlowSemiCondensed(0)/m/n/12 The robot has 3 wheels and a differential dri
+ve to enable turning. ROS 2 offers a built-in
  []
 
 [22]
@@ -1435,13 +1435,19 @@ ulum demo.” []$[][][][][] [] [] [] [][][][][][] [] [][][] []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 90--93
+[]\TU/BarlowSemiCondensed(0)/m/n/12 AskUbuntu. []$[][][][][] [] [] [] [][][][][
+][][][][] [] [][][] [] [][][][][][][][][] [] [][][][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 []\TU/BarlowSemiCondensed(0)/m/n/12 micro ROS, “Tutorials.” []$[][][][][] [] []
  [] [][][][][][][][][][] [] [][][][][][] [] [][] [] [][][][] [] [][][][][][][][
 ][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 []\TU/BarlowSemiCondensed(0)/m/n/12 N. Channel. []$[][][][][] [] [] [] [][][] [
 ] [][][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][
 ][][][][][][][][] []
@@ -1458,10 +1464,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 755.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 755.
  ) 
 Here is how much of TeX's memory you used:
- 24212 strings out of 493007
- 488791 string characters out of 6136718
+ 24213 strings out of 493007
+ 488801 string characters out of 6136718
  724381 words of memory out of 5000000
- 27956 multiletter control sequences out of 15000+600000
+ 27957 multiletter control sequences out of 15000+600000
  533544 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  64i,20n,87p,10425b,749s stack positions out of 5000i,500n,10000p,200000b,80000s

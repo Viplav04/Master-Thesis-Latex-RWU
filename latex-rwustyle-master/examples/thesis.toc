@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Procedure}{27}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}Latency Analysis of ROS 2}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Reliabilty of micro-ROS}{32}{section.5.2}
+\contentsline {section}{\numberline {5.2}Reliability of micro-ROS}{32}{section.5.2}
 \contentsline {section}{\numberline {5.3}Latency Analysis of micro-ROS}{33}{section.5.3}
 \contentsline {section}{\numberline {5.4}Discussion and Comparison}{36}{section.5.4}
 \contentsline {chapter}{\numberline {6}Conclusion}{37}{chapter.6}
