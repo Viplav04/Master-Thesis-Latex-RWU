@@ -5,48 +5,48 @@
   \item [{ADAS}]\begingroup Advanced Driver Assistance Systems\nomeqref {\relax 0.0}
 		\nompageref{3}
   \item [{ANSI}]\begingroup American National Standards Institute\nomeqref {\relax 2.0}
-		\nompageref{14}
+		\nompageref{15}
   \item [{CPU}]\begingroup Central Processing Unit\nomeqref {\relax 1.0}
-		\nompageref{8}
-  \item [{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}
-		\nompageref{8}
-  \item [{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}
 		\nompageref{9}
+  \item [{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}
+		\nompageref{9}
+  \item [{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}
+		\nompageref{10}
   \item [{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}
-		\nompageref{16}
+		\nompageref{17}
   \item [{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}
-		\nompageref{15}
-  \item [{kB}]\begingroup Kilobyte\nomeqref {\relax 4.0}\nompageref{25}
+		\nompageref{16}
+  \item [{kB}]\begingroup Kilobyte\nomeqref {\relax 4.0}\nompageref{26}
   \item [{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}
-		\nompageref{15}
+		\nompageref{16}
   \item [{LIDAR}]\begingroup Light Detection and Ranging\nomeqref {\relax 0.0}
 		\nompageref{3}
-  \item [{MB}]\begingroup Megabyte\nomeqref {\relax 5.0}\nompageref{31}
+  \item [{MB}]\begingroup Megabyte\nomeqref {\relax 5.0}\nompageref{33}
   \item [{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}
-		\nompageref{15}
+		\nompageref{16}
   \item [{ms}]\begingroup Milliseconds\nomeqref {\relax 5.0}
-		\nompageref{31}
+		\nompageref{33}
   \item [{ns}]\begingroup Nanoseconds\nomeqref {\relax 5.0}
-		\nompageref{31}
+		\nompageref{33}
   \item [{OFERA}]\begingroup Open Framework for Embedded Robot Applications\nomeqref {\relax 1.0}
-		\nompageref{9}
+		\nompageref{10}
   \item [{OpenCV}]\begingroup Open Computer Vision\nomeqref {\relax 3.0}
-		\nompageref{19}
+		\nompageref{20}
   \item [{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}
-		\nompageref{14}
+		\nompageref{15}
   \item [{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}
-		\nompageref{12}
+		\nompageref{13}
   \item [{ROS}]\begingroup Robot Operating System\nomeqref {\relax 0.0}
 		\nompageref{3}
   \item [{RTOS}]\begingroup Real-Time Operating System\nomeqref {\relax 0.0}
 		\nompageref{3}
   \item [{UART}]\begingroup Universal Asynchronous Receiver-Transmitter\nomeqref {\relax 2.0}
-		\nompageref{15}
+		\nompageref{16}
   \item [{UDP}]\begingroup User Datagram Protocol\nomeqref {\relax 2.0}
-		\nompageref{15}
+		\nompageref{16}
   \item [{us}]\begingroup Microseconds\nomeqref {\relax 5.0}
-		\nompageref{31}
+		\nompageref{33}
   \item [{USB}]\begingroup Universal Serial Bus\nomeqref {\relax 2.0}
-		\nompageref{14}
+		\nompageref{15}
 
 \end{thenomenclature}
