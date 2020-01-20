@@ -439,7 +439,7 @@ The robot has 3 wheels and a differential drive to enable turning. ROS 2 offers 
 		\section{Auto Stop using LIDAR}
 		\vspace*{0.5cm}
 		
-The laser sensor data gives out the minimum range of any object in its field. Range messages are already available in ROS 2. Then, an algorithm is applied to the incoming data and a condition is added. When the object is within a range of 4m, this node publishes a new Twist message to the robot telling it to stop. Also, it sends a "STOP, Reverse or Change direction" comment to the user and also prints out in the image running the in the lane detection node. The laser data can be visualized in the RViz package of ROS 2.
+The laser sensor data gives out the minimum range of any object in its field. Range messages are already available in ROS 2. Then, an algorithm is applied to the incoming data and a condition is added. When the object is within a range of 4m, this node publishes a new Twist message to the robot telling it to stop. Also, it sends a "STOP, Reverse or Change direction" comment to the user and also prints out in the image running in the lane detection node. The laser data can be visualized in the RViz package of ROS 2.
 			\begin{center}
 \includegraphics[scale=0.3]{fig/laser.png}
 \includegraphics[scale=0.17]{fig/laser2.png}
@@ -566,7 +566,7 @@ To connect the pressure sensor with the board (you might need the help of the bo
 \captionof{figure}[Delay Test]{Delay Test}
 \label{fig:delay}
 \end{center}
-\item To increase the data sizes of the message, custom ROS messages were created and testing was repeated with message sizes of 8 bytes (an integer data size is 4 bytes), 16 bytes, 32 bytes,64 bytes, and 128 bytes.
+\item To increase the data sizes of the message, custom ROS messages were created and testing was repeated with message sizes of 8 bytes (an integer data size is 4 bytes), 16 bytes, 32 bytes, 64 bytes, and 128 bytes.
 \begin{center}
 \includegraphics[scale=0.1]{fig/olimex.jpg}
 
