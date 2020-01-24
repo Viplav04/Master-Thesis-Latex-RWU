@@ -8,6 +8,11 @@ B.~Krzanich, ``Data is the new oil in the future of automated driving.''
 \bibitem{ROS}
 O.~Robotics, ``About ros.'' \url{https://www.ros.org/about-ros/}, 27.12.2019.
 
+\bibitem{rosvsros2}
+T.~A. Y.~Maruyama, S.~Kato, ``Exploring the performance of ros2.'' Proceedings
+  of the 13th International Conference on Embedded Software, pp. 5:1-5:10,
+  2016.
+
 \bibitem{ROS2distro}
 O.~Robotics, ``Distributions.''
   \url{https://index.ros.org/doc/ros2/Releases/#releases}, 27.12.2019.
@@ -37,11 +42,6 @@ D.~Foundation, ``What is dds.''
 O.~Robotics, ``About quality of service settings.''
   \url{https://index.ros.org/doc/ros2/Concepts/About-Quality-of-Service-Settings/},
   03.01.2020.
-
-\bibitem{rosvsros2}
-T.~A. Y.~Maruyama, S.~Kato, ``Exploring the performance of ros2.'' Proceedings
-  of the 13th International Conference on Embedded Software, pp. 5:1-5:10,
-  2016.
 
 \bibitem{urosarc}
 micro ROS, ``micro-ros-setup.''

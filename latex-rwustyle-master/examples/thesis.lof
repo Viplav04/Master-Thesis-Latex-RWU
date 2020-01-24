@@ -5,32 +5,32 @@
 \contentsline {figure}{\numberline {\relax 1.3}{\ignorespaces micro-ROS Logo}}{10}{figure.caption.6}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Working of Nodes, Topics and Messages}}{12}{figure.2.1}
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Software Layers in a Distributed System}}{12}{figure.2.2}
-\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces ROS 1 vs ROS 2 Architecture}}{14}{figure.caption.7}
-\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces micro-ROS Architecture}}{15}{figure.2.4}
-\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces STM32 Development Boards}}{16}{figure.2.5}
-\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Deadline and Jitter in Real-Time Systems}}{17}{figure.2.6}
-\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Inverted Pendulum Setup}}{18}{figure.2.7}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Software Layers in a Distributed System}}{13}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Comparison of ROS 1 and ROS 2 Architecture}}{15}{figure.caption.7}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces micro-ROS Architecture}}{16}{figure.2.4}
+\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces Olimex-STM32-E407 and Waveshare STM32-Open407I-C}}{18}{figure.2.5}
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Deadline and Jitter in Real-Time Systems}}{19}{figure.2.6}
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Inverted Pendulum Setup}}{20}{figure.2.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces ADAS Simulator using ROS 2 and Gazebo}}{20}{figure.3.1}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Gazebo Environment}}{21}{figure.3.2}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Canny Edge Detection}}{21}{figure.3.3}
-\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Line Detection using Hough Transform}}{22}{figure.3.4}
-\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Lane Detection}}{22}{figure.3.5}
-\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Laser and Camera Data Visualization}}{23}{figure.3.6}
-\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Auto Stop Feature}}{24}{figure.3.7}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces ADAS Simulator using ROS 2 and Gazebo}}{22}{figure.3.1}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Gazebo Environment}}{23}{figure.3.2}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Canny Edge Detection}}{23}{figure.3.3}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Line Detection using Hough Transform}}{24}{figure.3.4}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Lane Detection}}{24}{figure.3.5}
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Laser and Camera Data Visualization}}{25}{figure.3.6}
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Auto Stop Feature}}{26}{figure.3.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Inverted Pendulum Simulation in RViz}}{25}{figure.4.1}
-\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Olimex-stm32-e407 with Debugger}}{28}{figure.4.2}
-\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces BMP180 Pressure Sensor}}{28}{figure.4.3}
-\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Delay Test}}{29}{figure.4.4}
-\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Olimex Setup}}{29}{figure.4.5}
-\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Waveshare Setup}}{30}{figure.4.6}
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Inverted Pendulum Simulation in RViz}}{27}{figure.4.1}
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Olimex-STM32-E407 with JTAG Debugger}}{30}{figure.4.2}
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces BMP180 Pressure Sensor}}{31}{figure.4.3}
+\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Delay Test}}{31}{figure.4.4}
+\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Olimex Setup}}{32}{figure.4.5}
+\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Waveshare Setup}}{33}{figure.4.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 ms)}}{33}{figure.5.1}
-\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 us)}}{34}{figure.5.2}
-\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Micro-ROS Latencies for Data Size of 16 bytes (Least count-10 us)}}{34}{figure.5.3}
-\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Micro-ROS Latencies for Data Size of 32 bytes (Least count-10 us)}}{34}{figure.5.4}
-\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Micro-ROS Latencies for Data Size of 64 bytes (Least count-10 us)}}{35}{figure.5.5}
-\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Micro-ROS Latencies for Data Size of 128 bytes (Least count-10 us)}}{35}{figure.5.6}
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 ms)}}{37}{figure.5.1}
+\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Micro-ROS Latencies for Data Size of 8 bytes (Least count-10 \si \micro s)}}{38}{figure.5.2}
+\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Micro-ROS Latencies for Data Size of 16 bytes (Least count-10 \si \micro s)}}{38}{figure.5.3}
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Micro-ROS Latencies for Data Size of 32 bytes (Least count-10 \si \micro s)}}{38}{figure.5.4}
+\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Micro-ROS Latencies for Data Size of 64 bytes (Least count-10 \si \micro s)}}{39}{figure.5.5}
+\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Micro-ROS Latencies for Data Size of 128 bytes (Least count-10 \si \micro s)}}{39}{figure.5.6}
 \addvspace {10\p@ }

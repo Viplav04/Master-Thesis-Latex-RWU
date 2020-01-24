@@ -2,23 +2,25 @@
 \nomenclatureentry{aADAS@[{ADAS}]\begingroup Advanced Driver Assistance Systems\nomeqref {\relax 0.0}|nompageref}{3}
 \nomenclatureentry{aLIDAR@[{LIDAR}]\begingroup Light Detection and Ranging\nomeqref {\relax 0.0}|nompageref}{3}
 \nomenclatureentry{aRTOS@[{RTOS}]\begingroup Real-Time Operating System\nomeqref {\relax 0.0}|nompageref}{3}
+\nomenclatureentry{aGB@[{GB}]\begingroup Gigabytes\nomeqref {\relax 1.0}|nompageref}{8}
 \nomenclatureentry{aCPU@[{CPU}]\begingroup Central Processing Unit\nomeqref {\relax 1.0}|nompageref}{9}
-\nomenclatureentry{aDDS@[{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}|nompageref}{9}
+\nomenclatureentry{aDDS@[{DDS}]\begingroup Data Distribution Service\nomeqref {\relax 1.0}|nompageref}{10}
 \nomenclatureentry{aDDS-XRCE@[{DDS-XRCE}]\begingroup DDS for eXtremely Resource Constrained Environments\nomeqref {\relax 1.0}|nompageref}{10}
 \nomenclatureentry{aOFERA@[{OFERA}]\begingroup Open Framework for Embedded Robot Applications\nomeqref {\relax 1.0}|nompageref}{10}
 \nomenclatureentry{aQoS@[{QoS}]\begingroup Quality of Service\nomeqref {\relax 2.0}|nompageref}{13}
-\nomenclatureentry{aPOSIX@[{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}|nompageref}{15}
-\nomenclatureentry{aANSI@[{ANSI}]\begingroup American National Standards Institute\nomeqref {\relax 2.0}|nompageref}{15}
-\nomenclatureentry{aUSB@[{USB}]\begingroup Universal Serial Bus\nomeqref {\relax 2.0}|nompageref}{15}
-\nomenclatureentry{aLET@[{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}|nompageref}{16}
-\nomenclatureentry{aMCU@[{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}|nompageref}{16}
-\nomenclatureentry{aIP@[{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}|nompageref}{16}
-\nomenclatureentry{aUDP@[{UDP}]\begingroup User Datagram Protocol\nomeqref {\relax 2.0}|nompageref}{16}
-\nomenclatureentry{aUART@[{UART}]\begingroup Universal Asynchronous Receiver-Transmitter\nomeqref {\relax 2.0}|nompageref}{16}
-\nomenclatureentry{aI2C@[{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}|nompageref}{17}
-\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Computer Vision\nomeqref {\relax 3.0}|nompageref}{20}
-\nomenclatureentry{akB@[{kB}]\begingroup Kilobyte\nomeqref {\relax 4.0}|nompageref}{26}
-\nomenclatureentry{aMB@[{MB}]\begingroup Megabyte\nomeqref {\relax 5.0}|nompageref}{33}
-\nomenclatureentry{ans@[{ns}]\begingroup Nanoseconds\nomeqref {\relax 5.0}|nompageref}{33}
-\nomenclatureentry{ams@[{ms}]\begingroup Milliseconds\nomeqref {\relax 5.0}|nompageref}{33}
-\nomenclatureentry{aus@[{us}]\begingroup Microseconds\nomeqref {\relax 5.0}|nompageref}{33}
+\nomenclatureentry{aAPI@[{API}]\begingroup Application Programming Interface\nomeqref {\relax 2.0}|nompageref}{15}
+\nomenclatureentry{aPOSIX@[{POSIX}]\begingroup Portable Operating System Interface\nomeqref {\relax 2.0}|nompageref}{16}
+\nomenclatureentry{aANSI@[{ANSI}]\begingroup American National Standards Institute\nomeqref {\relax 2.0}|nompageref}{16}
+\nomenclatureentry{aUSB@[{USB}]\begingroup Universal Serial Bus\nomeqref {\relax 2.0}|nompageref}{16}
+\nomenclatureentry{aLET@[{LET}]\begingroup Logical Execution Time\nomeqref {\relax 2.0}|nompageref}{17}
+\nomenclatureentry{aMCU@[{MCU}]\begingroup Microcontroller Unit\nomeqref {\relax 2.0}|nompageref}{17}
+\nomenclatureentry{aIP@[{IP}]\begingroup Internet Protocol\nomeqref {\relax 2.0}|nompageref}{18}
+\nomenclatureentry{aUDP@[{UDP}]\begingroup User Datagram Protocol\nomeqref {\relax 2.0}|nompageref}{18}
+\nomenclatureentry{aUART@[{UART}]\begingroup Universal Asynchronous Receiver-Transmitter\nomeqref {\relax 2.0}|nompageref}{18}
+\nomenclatureentry{aI2C@[{I2C}]\begingroup Inter-Integrated Circuit\nomeqref {\relax 2.0}|nompageref}{18}
+\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Computer Vision\nomeqref {\relax 3.0}|nompageref}{23}
+\nomenclatureentry{akB@[{kB}]\begingroup Kilobyte\nomeqref {\relax 4.0}|nompageref}{28}
+\nomenclatureentry{aMB@[{MB}]\begingroup Megabyte\nomeqref {\relax 5.0}|nompageref}{37}
+\nomenclatureentry{ans@[{ns}]\begingroup Nanoseconds\nomeqref {\relax 5.0}|nompageref}{37}
+\nomenclatureentry{ams@[{ms}]\begingroup Milliseconds\nomeqref {\relax 5.0}|nompageref}{37}
+\nomenclatureentry{a\si\micro s@[{\si\micro s}]\begingroup Microseconds\nomeqref {\relax 5.0}|nompageref}{37}
