@@ -174,7 +174,7 @@ It is used to communicate with other nodes using ROS client libraries which allo
 
 In ROS 2, discovery of nodes is automatic through the underlying middleware. Nodes advertise information to other nodes when they go online, offline and also periodically for new nodes to join and enable communication. 
 
-ROS 2 design introduces the concept of node lifecycle, which helps to separate the real-time code path from the non real-time tasks. All memory allocations are done during node initialization which are the non real-time tasks, and then the real-time tasks (e.g. - calculations, data exchange, and data processing) takes place. 
+ROS 2 design introduces the concept of node lifecycle, which helps to separate the real-time code path from the non real-time tasks. All memory allocations are done during node initialization which are the non real-time tasks, and then the real-time tasks (e.g. - calculations, data exchange, and data processing) take place. 
 
 
 \vspace*{0.4cm}
@@ -811,6 +811,7 @@ micro-ROS offers deterministic behaviour on a RTOS and is more suitable than the
 The shortcomings of ROS 2 suggest that there is extensive development still needed to make ROS 2 suitable for real-time systems especially for automotive applications.
  Future versions of ROS 2 can be tested with the inverted pendulum demo and the results can be compared with that of Dashing. Investigation on configuration and fine-tuning of DDS by different vendors for better real-time performance is also required.
  \vspace*{0.15cm}
+ 
  Real-time applications are best tested in a dynamic environment over a long period of time. Testing of inverted pendulum demo can be done with micro-ROS and RTOS when the C++ executor becomes available. A physical hardware setup of an inverted pendulum for testing with micro-ROS can also be developed.
 Real-time testing of image messages using a camera sensor and micro-ROS can also be done as image processing is important in the field of automated driving.
 ROS 2 can also be compared with other software in the same testing environment. For example, the driverless Formula student racing team at the Ravensburg Weingarten University can compare the performance of different software with a parameter like brake distance measurement after defining a physical trigger point to apply the brakes or observe the deviation in the path the car takes on the track over multiple laps.
